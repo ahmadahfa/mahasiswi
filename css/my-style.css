@@ -1,0 +1,55 @@
+#container{
+	margin-top: 3%;
+}
+
+#home-menu{
+	margin-top: 20%;
+}
+
+#terminal-menu:hover{
+	border: 1px solid brown;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-left-radius: 8px;
+}
+
+#stasiun-menu:hover{
+	border: 1px solid brown;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-left-radius: 8px;
+}
+
+#tempatwisata-menu:hover{
+	border: 1px solid brown;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-left-radius: 8px;
+}
+
+#restoran-menu:hover{
+	border: 1px solid brown;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-left-radius: 8px;
+}
+
+#hotel-menu:hover{
+	border: 1px solid brown;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-left-radius: 8px;
+}
+
+#thumbnail{
+	text-align: center;
+}
+
+#go-btn{
+	margin-left: 54%;
+}
