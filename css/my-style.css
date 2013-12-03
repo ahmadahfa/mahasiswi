@@ -6,6 +6,10 @@
 	margin-top: 20%;
 }
 
+.gmnoprint img {
+    max-width: none; 
+}
+
 #terminal-menu:hover{
 	border: 1px solid brown;
 	border-top-style: none;
