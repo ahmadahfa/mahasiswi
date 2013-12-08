@@ -92,15 +92,15 @@ function passing(kode)
   var query = URLHead + URLTable + URLwhere + URLkey;
   
   $.get(query, function (data) {
-    
+    var kode = data.rows[0][0];
     var global_latitude = data.rows[0][4];
     var global_longitude = data.rows[0][5];
     
-    detail(global_latitude, global_longitude);
+    detail(kode, global_latitude, global_longitude);
   }); 
 }
 
-function detail(lat, lon)
+function detail(kode, lat, lon)
 {
     google.maps.visualRefresh = true;
 
@@ -184,19 +184,32 @@ function detail(lat, lon)
       }
     }
 
-    detail_main(lat, lon);   
+    detail_main(kode);   
 }
 
-function detail_main(lat, lon) {
+function detail_main(kode) {
     google.maps.event.addDomListener(window, 'load', detail); 
-    get_around_place(lat, lon);
+    get_around_place(kode);
 }
 
-function get_around_place(lat, lon) {
+function get_around_place(kode) {
+	alert(kode);
     var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
     var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
-    var URLwhere = " where Kode IN '" + kode + "'";
+    var URLwhere = " where Kode NOT EQUAL TO '" + kode + "'";
     var URLkey = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
+	var query = URLHead + URLTable + URLwhere + URLkey;
+	var distance = new Array();
+	$.get(query, function (data) {
+		for (var i = 0; i < data.rows.length;i++)	
+			var long1 = data.row
+		
+	 }); 
+	
+}
+
+function getDistance(){
 
 }
+
 
