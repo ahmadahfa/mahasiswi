@@ -17,7 +17,7 @@ function ambil_peta() {
 
     var mapDiv = document.getElementById('googft-mapCanvas');
     mapDiv.style.width = isMobile ? '100%' : '1200px';
-    mapDiv.style.height = isMobile ? '100%' : '400px';
+    mapDiv.style.height = isMobile ? '100%' : '500px';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(-6.226256262359782, 106.88347505859372),
       zoom: 11,
@@ -83,6 +83,8 @@ function windowLayer(e, infoWindow, map)
 
 function passing(kode) 
 {
+  document.getElementById("main_map").style.display = "none";
+  document.getElementById("detail_map").style.display = "block";
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
   var URLwhere = " where Kode IN '" + kode + "'";
@@ -110,9 +112,9 @@ function detail(lat, lon)
       viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
     }
 
-    var mapDiv = document.getElementById('googft-mapCanvas');
+    var mapDiv = document.getElementById('detail-googft-mapCanvas');
     mapDiv.style.width = isMobile ? '100%' : '800px';
-    mapDiv.style.height = isMobile ? '100%' : '400px';
+    mapDiv.style.height = isMobile ? '100%' : '500px';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(lat, lon),
       zoom: 14,
@@ -142,7 +144,7 @@ function detail(lat, lon)
 
     var circle = new google.maps.Circle({
       map: map,
-      radius: 500,    // metres
+      radius: 1000,    // metres
       fillColor: '#AA0000'
     });
 
@@ -150,12 +152,20 @@ function detail(lat, lon)
 
     var circle2 = new google.maps.Circle({
       map: map,
-      radius: 1000,    // metres
+      radius: 3000,    // metres
       fillColor: '#FF0000'
     });
 
 
     circle2.bindTo('center', marker, 'position');
+
+    var circle3 = new google.maps.Circle({
+      map: map,
+      radius: 5000,    // metres
+      fillColor: '#FF00FF'
+    });
+
+    circle3.bindTo('center', marker, 'position');
     
     if (isMobile) {
       var legend = document.getElementById('googft-legend');
@@ -174,10 +184,19 @@ function detail(lat, lon)
       }
     }
 
-    detail_main();   
+    detail_main(lat, lon);   
 }
 
-function detail_main() {
+function detail_main(lat, lon) {
     google.maps.event.addDomListener(window, 'load', detail); 
+    get_around_place(lat, lon);
+}
+
+function get_around_place(lat, lon) {
+    var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
+    var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
+    var URLwhere = " where Kode IN '" + kode + "'";
+    var URLkey = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
+
 }
 

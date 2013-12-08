@@ -11,15 +11,26 @@
   <body onload = "ambil_peta()">
     <div id="container" class="container-fluid">
 		<div class="row-fluid">
-			<div class="span8 offset2">
+			<h4>Pilih Lokasi Wisata!</h4>	
+			<div class="span12" id = "main_map" display = "block">
 				<br/>
-				<h4>Pilih Lokasi Wisata!</h4>	
-				<div class="hero-unit" id = "googft-mapCanvas">
+				
+				<div  id = "googft-mapCanvas">
 				  <!-- <h1>PETA TEMPAT WISATA</h1>
 				  <br/><br/><br/><br/><br/><br/><br/><br/> -->
 				</div>
-				<a href="restoran.html">NEXT</a>
+				<!-- <a href="restoran.html">NEXT</a> -->
+			</div>
+
+			<div class="span12" id = "detail_map" display = "none">
+				<div  class = "span4" id = "map-custom">
+					
+				</div>
+				<div  class = "span8"id = "detail-googft-mapCanvas">
+				</div>
+				<!-- <a href="restoran.html">NEXT</a> -->
 			</div>	
+			
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
