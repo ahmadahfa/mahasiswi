@@ -15,17 +15,11 @@
 			<h4>Pilih Lokasi Wisata!</h4>	
 			<div class="span12" id = "main_map" style = "display:block;">
 				<br/>
-				
 				<div  id = "googft-mapCanvas">
-				  <!-- <h1>PETA TEMPAT WISATA</h1>
-				  <br/><br/><br/><br/><br/><br/><br/><br/> -->
 				</div>
-				<!-- <a href="restoran.html">NEXT</a> -->
 			</div>
-			<div class = "span8" id = "detail-googft-mapCanvas">
-			</div>			
-
-			<div class = "span4" id = "map-custom" >
+			
+			<div class = "span4" id = "detail_map" style = "display:none;">
 				<div class="accordion" id="accordion2">
 				  <div class="accordion-group">
 				    <div class="accordion-heading" style = "background-color:#bd3412;">
@@ -97,6 +91,24 @@
 				  </div>
 				</div>
 			</div>
+			<div class = "span4" id = "map_route" style = "display:none;">
+				<form role="form">
+				  <div class="form-group">
+					<input type="text" class="form-control" id="origin" placeholder="Asal">
+				  </div>
+				  <div class="form-group">
+					<input type="text" class="form-control" id="destination" placeholder="Tujuan">
+				  </div>
+				  <button type="submit" class="btn btn-info">Go</button>
+				</form>
+				<div class = "route-result">
+					Berikut adalah rute yang tersedia untuk Origin menuju Destination<br /> Belok Kanan bla3x<br /> Belok Kanan bla3x<br /> Belok Kanan bla3x
+				</div>
+				<button type="button" class="btn btn-warning" data-toggle="button">Back</button><br />							
+			</div>
+			<div class = "span8" id = "detail-googft-mapCanvas">
+			</div>			
+			
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
