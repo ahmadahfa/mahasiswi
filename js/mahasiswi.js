@@ -83,6 +83,7 @@ function windowLayer(e, infoWindow, map)
 
 function passing(kode) 
 {
+  alert(kode);
   document.getElementById("main_map").style.display = "none";
   document.getElementById("detail_map").style.display = "block";
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
@@ -184,28 +185,78 @@ function detail(kode, lat, lon)
       }
     }
 
-    detail_main(kode);   
+    detail_main(kode, lat, lon);   
 }
 
-function detail_main(kode) {
+function detail_main(kode, lat, lon) {
     google.maps.event.addDomListener(window, 'load', detail); 
-    get_around_place(kode);
+    get_around_place(kode, lat, lon);
 }
 
-function get_around_place(kode) {
-	alert(kode);
+function get_around_place(kode, lat, lon) {
     var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
     var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
     var URLwhere = " where Kode NOT EQUAL TO '" + kode + "'";
     var URLkey = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
-	var query = URLHead + URLTable + URLwhere + URLkey;
-	var distance = new Array();
-	$.get(query, function (data) {
-		for (var i = 0; i < data.rows.length;i++)	
-			var long1 = data.row
-		
+  	var query = URLHead + URLTable + URLwhere + URLkey;
+  	var distance_seribu = "";
+    var distance_tigaribu = "";
+    var distance_limaribu = "";
+	  $.get(query, function (data) {
+  		
+      for (var i = 0; i < data.rows.length; i++)	 {
+        var kode = data.rows[i][0];
+        var lat2 = data.rows[i][4];
+        var lon2 = data.rows[i][5];  
+        //alert(lat + " " + lon + " " + lat2 + " " + lon2);
+        var koor1 = new google.maps.LatLng(lat, lon);
+        var koor2 = new google.maps.LatLng(lat2, lon2);
+        var res  = google.maps.geometry.spherical.computeDistanceBetween(koor1,koor2);
+       // alert(res + " " + (res + 2000));
+        if (res <= 1000) {
+          distance_seribu = mahasiswi_sort(kode, res, distance_seribu);
+          //alert(distance_seribu) ;
+        }
+        else if (res > 1000 && res <= 3000) {
+          distance_tigaribu = mahasiswi_sort(kode, res, distance_tigaribu);
+        }
+        else if (res > 3000 && res < 5000) {
+          distance_limaribu = mahasiswi_sort(kode, res, distance_limaribu);
+        } 
+      }
+      /*alert(distance_seribu);
+      alert(distance_tigaribu);
+      alert(distance_limaribu);*/
 	 }); 
 	
+}
+
+function mahasiswi_sort(kode, res, distance) {
+  var arr_seribu = distance.split("-");
+  //alert(arr_seribu.length);
+  if (arr_seribu.length == 0) {
+       distance = kode + ";" + res + "-";
+       //alert(distance);
+       return distance;
+  }
+  else {
+    var j = 0;
+    var text = "";
+    for (j = 0; j < arr_seribu.length; j++) {
+        var jarak = arr_seribu[j].split(";");
+        var jarak_int = parseInt(jarak[1]);
+        if (res < jarak_int) break;
+        else {
+          text += arr_seribu[j] + "-";
+        }
+    }
+    text += (kode + ";" + res + "-");
+    for (var k = j; k<arr_seribu.length; k++) {
+       text += arr_seribu[k] + "-";
+    }
+    distance = text;
+    return distance;
+  }
 }
 
 function getDistance(){
