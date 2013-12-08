@@ -13,7 +13,7 @@
     <div id="container" class="container-fluid">
 		<div class="row-fluid">
 			<h4>Pilih Lokasi Wisata!</h4>	
-			<div class="span12" id = "main_map" display = "block">
+			<div class="span12" id = "main_map" style = "display:block;">
 				<br/>
 				
 				<div  id = "googft-mapCanvas">
@@ -22,96 +22,81 @@
 				</div>
 				<!-- <a href="restoran.html">NEXT</a> -->
 			</div>
+			<div class = "span8" id = "detail-googft-mapCanvas">
+			</div>			
 
-			<div class="span12" id = "detail_map" display = "none">
-				<div  class = "span4" id = "map-custom" display = "block">
-					<div class="panel-group" id="accordion">
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-							  Stasiun
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseOne" class="panel-collapse collapse in">
-						  <div class="panel-body">
-							Stasiun 1 - 4000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Stasiun 2 - 2000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Stasiun 3 - 1000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						  </div>
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-							  Terminal 
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseTwo" class="panel-collapse collapse">
-						  <div class="panel-body">
-							Terminal 1 - 4000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Terminal 2 - 2000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Terminal 3 - 1000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						  </div>
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-							  Rumah Makan
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseThree" class="panel-collapse collapse">
-						  <div class="panel-body">
-							Rumah Makan 1 - 4000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Rumah Makan 2 - 2000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Rumah Makan 3 - 1000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						  </div>
-						</div>
-					  </div>
-					  <div class="panel panel-default">
-						<div class="panel-heading">
-						  <h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-							  Hotel
-							</a>
-						  </h4>
-						</div>
-						<div id="collapseFour" class="panel-collapse collapse">
-						  <div class="panel-body">
-							Hotel 1 - 4000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Hotel 2 - 2000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-							Hotel 3 - 1000m<br />
-							<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						  </div>
-						</div>
-					  </div>					
-					</div>
+			<div class = "span4" id = "map-custom" >
+				<div class="accordion" id="accordion2">
+				  <div class="accordion-group">
+				    <div class="accordion-heading" style = "background-color:#bd3412;">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+				        Stasiun
+				      </a>
+				    </div>
+				    <div id="collapseOne" class="accordion-body collapse">
+				      <div class="accordion-inner">
+						Stasiun 1 - 4000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Stasiun 2 - 2000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Stasiun 3 - 1000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-group">
+				    <div class="accordion-heading" style = "background-color:#935278;">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+				        Terminal
+				      </a>
+				    </div>
+				    <div id="collapseTwo" class="accordion-body collapse">
+				      <div class="accordion-inner">
+						Terminal 1 - 4000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Terminal 2 - 2000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Terminal 3 - 1000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-group">
+				    <div class="accordion-heading" style = "background-color:#359862;">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+				        Rumah Makan
+				      </a>
+				    </div>
+				    <div id="collapseThree" class="accordion-body collapse">
+				      <div class="accordion-inner">
+						Rumah Makan1 - 4000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Rumah Makan2 - 2000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Rumah Makan3 - 1000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-group">
+				    <div class="accordion-heading" style = "background-color:#aaf372;">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+				        Hotel
+				      </a>
+				    </div>
+				    <div id="collapseFour" class="accordion-body collapse">
+				      <div class="accordion-inner">
+						Hotel1 - 4000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Hotel2 - 2000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Hotel3 - 1000m<br />
+						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+				      </div>
+				    </div>
+				  </div>
 				</div>
-				<div  class = "span4" id = "map-route" display = "none">
-					
-				</div>
-				<div  class = "span8"id = "detail-googft-mapCanvas">
-				</div>
-				<!-- <a href="restoran.html">NEXT</a> -->
-			</div>	
-			
+			</div>
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
@@ -119,6 +104,7 @@
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry&sensor=false"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap2.min.js"></script>
     <script src="js/mahasiswi.js"></script>
   </body>
 </html>
