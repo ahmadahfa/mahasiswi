@@ -10,46 +10,6 @@
     max-width: none; 
 }
 
-#terminal-menu:hover{
-	border: 1px solid brown;
-	border-top-style: none;
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-left-radius: 8px;
-}
-
-#stasiun-menu:hover{
-	border: 1px solid brown;
-	border-top-style: none;
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-left-radius: 8px;
-}
-
-#tempatwisata-menu:hover{
-	border: 1px solid brown;
-	border-top-style: none;
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-left-radius: 8px;
-}
-
-#restoran-menu:hover{
-	border: 1px solid brown;
-	border-top-style: none;
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-left-radius: 8px;
-}
-
-#hotel-menu:hover{
-	border: 1px solid brown;
-	border-top-style: none;
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-left-radius: 8px;
-}
-
 #thumbnail{
 	text-align: center;
 }
@@ -57,3 +17,32 @@
 #go-btn{
 	margin-left: 54%;
 }
+
+.label {
+	margin: 20px auto;
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    white-space: nowrap;
+	text-align: center;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.label.near {
+	margin: 15px 0 15px 0;
+    background-color: #c43c35;
+}
+.label.normal {
+    background-color: #f89406;
+}
+.label.far {
+    background-color: #46a546;
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
