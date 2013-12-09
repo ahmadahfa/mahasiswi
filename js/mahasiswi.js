@@ -203,7 +203,6 @@ function get_around_place(kode, lat, lon) {
     var distance_tigaribu = "";
     var distance_limaribu = "";
 	  $.get(query, function (data) {
-  		
       for (var i = 0; i < data.rows.length; i++)	 {
         var kode = data.rows[i][0];
         var lat2 = data.rows[i][4];
@@ -227,14 +226,52 @@ function get_around_place(kode, lat, lon) {
       /*alert(distance_seribu);
       alert(distance_tigaribu);
       alert(distance_limaribu);*/
+      var stasiun = "";
+      var terminal = "";
+      var rumah_makan = "";
+      var hotel = "";
+      var wisata = "";
+      var arr_distance = distance_seribu.split("-");
+      for (var j = 0; j<arr_distance.length; j++) {
+          var temp = arr_distance[j].split(";");
+          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "-";
+          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "-";
+          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "-";
+          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
+          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-";
+      }
+      arr_distance = distance_tigaribu.split("-");
+      for (var j = 0; j<arr_distance.length; j++) {
+          var temp = arr_distance[j].split(";");
+          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "-";
+          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "-";
+          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "-";
+          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
+          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-"; 
+      }
+
+      arr_distance = distance_limaribu.split("-");
+      for (var j = 0; j<arr_distance.length; j++) {
+          var temp = arr_distance[j].split(";");
+          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "-";
+          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "-";
+          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "-";
+          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
+          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-";
+      }
+      alert("Stasiun " + stasiun);
+      alert("Terminal " + terminal);
+      alert("Hotel " + hotel);
+      alert("Wisata " + wisata);
+      alert("rumah_makan " + rumah_makan);
 	 }); 
 	
 }
 
 function mahasiswi_sort(kode, res, distance) {
-  var arr_seribu = distance.split("-");
+  var arr_main = distance.split("-");
   //alert(arr_seribu.length);
-  if (arr_seribu.length == 0) {
+  if (arr_main.length == 0) {
        distance = kode + ";" + res + "-";
        //alert(distance);
        return distance;
@@ -242,17 +279,17 @@ function mahasiswi_sort(kode, res, distance) {
   else {
     var j = 0;
     var text = "";
-    for (j = 0; j < arr_seribu.length; j++) {
-        var jarak = arr_seribu[j].split(";");
+    for (j = 0; j < arr_main.length; j++) {
+        var jarak = arr_main[j].split(";");
         var jarak_int = parseInt(jarak[1]);
         if (res < jarak_int) break;
         else {
-          text += arr_seribu[j] + "-";
+          text += arr_main[j] + "-";
         }
     }
     text += (kode + ";" + res + "-");
-    for (var k = j; k<arr_seribu.length; k++) {
-       text += arr_seribu[k] + "-";
+    for (var k = j; k<arr_main.length; k++) {
+       text += arr_main[k] + "-";
     }
     distance = text;
     return distance;
