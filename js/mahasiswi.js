@@ -94,14 +94,15 @@ function passing(kode)
   
   $.get(query, function (data) {
     var kode = data.rows[0][0];
+    var nama = data.rows[0][2];
     var global_latitude = data.rows[0][4];
     var global_longitude = data.rows[0][5];
     
-    detail(kode, global_latitude, global_longitude);
+    detail(kode, nama, global_latitude, global_longitude);
   }); 
 }
 
-function detail(kode, lat, lon)
+function detail(kode, nama, lat, lon)
 {
     google.maps.visualRefresh = true;
 
@@ -185,15 +186,15 @@ function detail(kode, lat, lon)
       }
     }
 
-    detail_main(kode, lat, lon);   
+    detail_main(kode, nama, lat, lon);   
 }
 
-function detail_main(kode, lat, lon) {
+function detail_main(kode, nama, lat, lon) {
     google.maps.event.addDomListener(window, 'load', detail); 
-    get_around_place(kode, lat, lon);
+    get_around_place(kode, nama, lat, lon);
 }
 
-function get_around_place(kode, lat, lon) {
+function get_around_place(kode, nama, lat, lon) {
     var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
     var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
     var URLwhere = " where Kode NOT EQUAL TO '" + kode + "'";
@@ -204,7 +205,8 @@ function get_around_place(kode, lat, lon) {
     var distance_limaribu = "";
 	  $.get(query, function (data) {
       for (var i = 0; i < data.rows.length; i++)	 {
-        var kode = data.rows[i][0];
+        var kode2 = data.rows[i][0];
+        var nama2 = data.rows[i][2];
         var lat2 = data.rows[i][4];
         var lon2 = data.rows[i][5];  
         //alert(lat + " " + lon + " " + lat2 + " " + lon2);
@@ -213,14 +215,14 @@ function get_around_place(kode, lat, lon) {
         var res  = google.maps.geometry.spherical.computeDistanceBetween(koor1,koor2);
        // alert(res + " " + (res + 2000));
         if (res <= 1000) {
-          distance_seribu = mahasiswi_sort(kode, res, distance_seribu);
+          distance_seribu = mahasiswi_sort(kode2, nama2, res, distance_seribu);
           //alert(distance_seribu) ;
         }
         else if (res > 1000 && res <= 3000) {
-          distance_tigaribu = mahasiswi_sort(kode, res, distance_tigaribu);
+          distance_tigaribu = mahasiswi_sort(kode2, nama2, res, distance_tigaribu);
         }
         else if (res > 3000 && res < 5000) {
-          distance_limaribu = mahasiswi_sort(kode, res, distance_limaribu);
+          distance_limaribu = mahasiswi_sort(kode2, nama2, res, distance_limaribu);
         } 
       }
       /*alert(distance_seribu);
@@ -268,11 +270,11 @@ function get_around_place(kode, lat, lon) {
 	
 }
 
-function mahasiswi_sort(kode, res, distance) {
+function mahasiswi_sort(kode, nama, res, distance) {
   var arr_main = distance.split("-");
   //alert(arr_seribu.length);
   if (arr_main.length == 0) {
-       distance = kode + ";" + res + "-";
+       distance = kode + ";" + nama + ";" +  res + "-";
        //alert(distance);
        return distance;
   }
@@ -287,7 +289,7 @@ function mahasiswi_sort(kode, res, distance) {
           text += arr_main[j] + "-";
         }
     }
-    text += (kode + ";" + res + "-");
+    text += (kode + ";" + nama + ";" + res + "-");
     for (var k = j; k<arr_main.length; k++) {
        text += arr_main[k] + "-";
     }
