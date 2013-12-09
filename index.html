@@ -12,15 +12,21 @@
   <!-- rizal -->
   
     <div id="container" class="container-fluid">
-		<ul class="nav nav-pills nav-justified">
+		<!--<ul class="nav nav-pills nav-justified">
 		  <li><a href="#">Home</a></li>
 		  <li><a href="#">Profile</a></li>
 		  <li><a href="#">Messages</a></li>
-		</ul>	
+		</ul> -->
+		 <div class="navbar navbar-fixed-top">
+		   <div class="navbar-inner">
+			 <div class="container">
+				<a class="brand" href="index.html"> <img src="img/logo1.png" width="40px"></a>
+			 </div>
+		   </div>
+		 </div>		
 		<div class="row-fluid">
-			<h4>Pilih Lokasi Wisata!</h4>										
+			<br /><h4>Pilih Lokasi Wisata!</h4>										
 			<div class="span12" id = "main_map" style = "display:block;">
-				<br/>
 				<div  id = "googft-mapCanvas"></div>
 			</div>
 			
@@ -32,7 +38,7 @@
 				        Stasiun
 				      </a>
 				    </div>
-				    <div id="stasiun" class="accordion-body collapse">
+				    <div id="stasiun" class="accordion-body collapse in">
 				      <div class="accordion-inner">
 						Stasiun 1 - 0-1000m<br />
 						<ol id = "stasiun-1000">
@@ -146,8 +152,6 @@
 			</div>
 			<div class = "span8" id = "detail-googft-mapCanvas">
 			</div>
-			
-			
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery.js"></script>
