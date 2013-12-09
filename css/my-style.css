@@ -6,6 +6,11 @@
 	margin-top: 20%;
 }
 
+#title{
+	text-align: center;
+	margin: 2% 0%;
+}
+
 .gmnoprint img {
     max-width: none; 
 }

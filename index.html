@@ -15,7 +15,7 @@
 		 <div class="navbar navbar-fixed-top">
 		   <div class="navbar-inner">
 			 <div class="container">
-				<a class="brand" href="index.html"> <img src="img/logo2.png" width="40px"></a>
+				<a class="brand" href="index.html"> <img src="img/logo2.png" width="50px"></a>
 				<span class="label near">0 m - 1000 m</span>
 				<span class="label normal">1001 m - 3000 m</span>
 				<span class="label far">3001 m - 5000 m</span>
@@ -23,7 +23,8 @@
 		   </div>
 		 </div>
 		<div class="row-fluid">
-			<br /><h4>Pilih Lokasi Wisata!</h4>										
+			<br/><br/>
+			<h4 id="title">Pilih Lokasi Wisata!</h4>										
 			<div class="span12" id = "main_map" style = "display:block;">
 				<div  id = "googft-mapCanvas"></div>
 			</div>
@@ -32,7 +33,7 @@
 					<div class="accordion" id="accordion2">
 					  <div class="accordion-group">
 						<div class="accordion-heading" style = "background-color:#bd3412;">
-						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#stasiun">
+						  <a class="accordion-toggle" style = "color:white; " data-toggle="collapse" data-parent="#accordion2" href="#stasiun">
 							Stasiun
 						  </a>
 						</div>
@@ -52,7 +53,7 @@
 					  </div>
 					  <div class="accordion-group">
 						<div class="accordion-heading" style = "background-color:#935278;">
-						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#terminal">
+						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#terminal">
 							Terminal
 						  </a>
 						</div>
@@ -72,7 +73,7 @@
 					  </div>
 					  <div class="accordion-group">
 						<div class="accordion-heading" style = "background-color:#359862;">
-						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#rumahmakan">
+						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#rumahmakan">
 							Rumah Makan
 						  </a>
 						</div>
@@ -92,7 +93,7 @@
 					  </div>
 					  <div class="accordion-group">
 						<div class="accordion-heading" style = "background-color:#aaf372;">
-						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#hotel">
+						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#hotel">
 							Hotel
 						  </a>
 						</div>
@@ -112,7 +113,7 @@
 					  </div>
 					  <div class="accordion-group">
 						<div class="accordion-heading" style = "background-color:#193f52;">
-						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#wisata">
+						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#wisata">
 							Tempat Wisata
 						  </a>
 						</div>
@@ -131,7 +132,7 @@
 						</div>
 					  </div>
 					</div>
-					<button type="button" class="btn btn-danger" data-toggle="button" style = "float:right;" onclick = "ambil_peta()">Back</button><br />
+					<button type="button" class="btn btn-success" data-toggle="button" style = "float:right;" onclick = "ambil_peta()">Back</button><br />
 				</div>
 				<div class = "span4" id = "map_route" style = "display:none;">
 					<form role="form">
@@ -146,7 +147,7 @@
 					<div class = "route-result">
 						Berikut adalah rute yang tersedia untuk Origin menuju Destination<br /> Belok Kanan bla3x<br /> Belok Kanan bla3x<br /> Belok Kanan bla3x
 					</div>
-					<button type="button" class="btn btn-warning" data-toggle="button">Back</button><br />							
+					<button type="button" class="btn btn-success" data-toggle="button">Back</button><br />							
 				</div>
 				<div class = "span8" id = "detail-googft-mapCanvas">
 				</div>
