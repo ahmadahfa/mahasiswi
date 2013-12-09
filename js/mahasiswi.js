@@ -4,7 +4,9 @@ function ambil_peta_main() {
 }
 
 function ambil_peta() {
-  
+    alert("cintaa");
+    document.getElementById("main_map").style.display = "block";
+  document.getElementById("detail_map").style.display = "none";      
 	  google.maps.visualRefresh = true;
 
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
