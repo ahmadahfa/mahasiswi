@@ -10,86 +10,124 @@
   </head>
   <body onload = "ambil_peta()">
   <!-- rizal -->
+  
     <div id="container" class="container-fluid">
+		<ul class="nav nav-pills nav-justified">
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">Profile</a></li>
+		  <li><a href="#">Messages</a></li>
+		</ul>	
 		<div class="row-fluid">
-			<h4>Pilih Lokasi Wisata!</h4>	
+			<h4>Pilih Lokasi Wisata!</h4>										
 			<div class="span12" id = "main_map" style = "display:block;">
 				<br/>
-				<div  id = "googft-mapCanvas">
-				</div>
+				<div  id = "googft-mapCanvas"></div>
 			</div>
 			
 			<div class = "span4" id = "detail_map" style = "display:none;">
 				<div class="accordion" id="accordion2">
 				  <div class="accordion-group">
 				    <div class="accordion-heading" style = "background-color:#bd3412;">
-				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#stasiun">
 				        Stasiun
 				      </a>
 				    </div>
-				    <div id="collapseOne" class="accordion-body collapse">
+				    <div id="stasiun" class="accordion-body collapse">
 				      <div class="accordion-inner">
-						Stasiun 1 - 4000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Stasiun 2 - 2000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Stasiun 3 - 1000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						Stasiun 1 - 0-1000m<br />
+						<ol id = "stasiun-1000">
+						</ol>
+						Stasiun 1 - 1001-3000m<br />
+						<ol id = "stasiun-3000">
+						</ol>
+						Stasiun 1 - 3001-5000m<br />
+						<ol id = "stasiun-5000">
+						</ol>
 				      </div>
 				    </div>
 				  </div>
 				  <div class="accordion-group">
 				    <div class="accordion-heading" style = "background-color:#935278;">
-				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#terminal">
 				        Terminal
 				      </a>
 				    </div>
-				    <div id="collapseTwo" class="accordion-body collapse">
+				    <div id="terminal" class="accordion-body collapse">
 				      <div class="accordion-inner">
-						Terminal 1 - 4000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Terminal 2 - 2000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Terminal 3 - 1000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						terminal 1 - 0-1000m<br />
+						<ol id = "terminal-1000">
+						</ol>
+						terminal 1 - 1001-3000m<br />
+						<ol id = "terminal-3000">
+						</ol>
+						terminal 1 - 3001-5000m<br />
+						<ol id = "terminal-5000">
+						</ol>
 				      </div>
 				    </div>
 				  </div>
 				  <div class="accordion-group">
 				    <div class="accordion-heading" style = "background-color:#359862;">
-				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#rumahmakan">
 				        Rumah Makan
 				      </a>
 				    </div>
-				    <div id="collapseThree" class="accordion-body collapse">
+				    <div id="rumahmakan" class="accordion-body collapse">
 				      <div class="accordion-inner">
-						Rumah Makan1 - 4000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Rumah Makan2 - 2000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Rumah Makan3 - 1000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						rumahmakan 1 - 0-1000m<br />
+						<ol id = "rumahmakan-1000">
+						</ol>
+						rumahmakan 1 - 1001-3000m<br />
+						<ol id = "rumahmakan-3000">
+						</ol>
+						rumahmakan 1 - 3001-5000m<br />
+						<ol id = "rumahmakan-5000">
+						</ol>
 				      </div>
 				    </div>
 				  </div>
 				  <div class="accordion-group">
 				    <div class="accordion-heading" style = "background-color:#aaf372;">
-				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#hotel">
 				        Hotel
 				      </a>
 				    </div>
-				    <div id="collapseFour" class="accordion-body collapse">
+				    <div id="hotel" class="accordion-body collapse">
 				      <div class="accordion-inner">
-						Hotel1 - 4000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Hotel2 - 2000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
-						Hotel3 - 1000m<br />
-						<button type="button" class="btn btn-info" data-toggle="button">Route</button><br />							
+						hotel 1 - 0-1000m<br />
+						<ol id = "hotel-1000">
+						</ol>
+						hotel 1 - 1001-3000m<br />
+						<ol id = "hotel-3000">
+						</ol>
+						hotel 1 - 3001-5000m<br />
+						<ol id = "hotel-5000">
+						</ol>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-group">
+				    <div class="accordion-heading" style = "background-color:#193f52;">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#wisata">
+				        Tempat Wisata
+				      </a>
+				    </div>
+				    <div id="wisata" class="accordion-body collapse">
+				      <div class="accordion-inner">
+						tempat wisata 1 - 0-1000m<br />
+						<ol id = "wisata-1000">
+						</ol>
+						tempat wisata 1 - 1001-3000m<br />
+						<ol id = "wisata-3000">
+						</ol>
+						tempat wisata 1 - 3001-5000m<br />
+						<ol id = "wisata-5000">
+						</ol>
 				      </div>
 				    </div>
 				  </div>
 				</div>
+				<button type="button" class="btn btn-danger" data-toggle="button" style = "float:right;">Back</button><br />
 			</div>
 			<div class = "span4" id = "map_route" style = "display:none;">
 				<form role="form">
@@ -107,7 +145,8 @@
 				<button type="button" class="btn btn-warning" data-toggle="button">Back</button><br />							
 			</div>
 			<div class = "span8" id = "detail-googft-mapCanvas">
-			</div>			
+			</div>
+			
 			
 		</div>
 	</div>
