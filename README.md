@@ -17,7 +17,7 @@ Find a bug? Just [open a new issue](https://github.com/ahmadahfa/mahasiswi/issue
 
 ## Authors
 
-1. Ahmad Fanani [http://github.com/ahmadahfa](http://github.com/ahmadahfa)
+1. Ahmad Fanani [https://github.com/ahmadahfa](https://github.com/ahmadahfa)
 2. Adrian Nuradiansyah [https://github.com/ansyah](https://github.com/ansyah)
 3. Rizal Bahriawan [https://github.com/rizalbahriawan](https://github.com/rizalbahriawan)
 4. Budi Hartadi [https://github.com/budihartadi](https://github.com/budihartadi)
