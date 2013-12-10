@@ -345,7 +345,8 @@ function list_place(index, place) {
   for (var i = 0; i<arr_list.length; i++) {
       var temp = arr_list[i].split(";");
       if (parseInt(temp[2]) <= 1000) {
-          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
+          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</br>";
+          text_seribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + temp[1] + '\')">Back</button><br/></li>';
       }
       else if (parseInt(temp[2]) > 1000 && parseInt(temp[2]) <= 3000) {
           text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
@@ -471,5 +472,9 @@ function list_place(index, place) {
 		document.getElementById("rumahmakan-5000").innerHTML = "<span>Data tidak tersedia</span>";
 	  }   
   }
+}
+
+function getDistance(place) {
+  alert(place);
 }
 
