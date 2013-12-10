@@ -59,20 +59,21 @@ function ambil_peta() {
     }
 
     google.maps.event.addListener(layer, 'click', function(e) {
-      windowLayer(e, infoWindow, map);
+      windowLayer(0, e, infoWindow, map);
     });
 
     ambil_peta_main();
 }
 
-function windowLayer(e, infoWindow, map)
+function windowLayer(index, e, infoWindow, map)
 {
   e.infoWindowHtml = "<div class='googft-info-window'>";   
   e.infoWindowHtml += "<b>Tipe: </b><font>" + e.row['Tipe'].value + "</font><br>";
   e.infoWindowHtml += "<b>Nama: </b>" + e.row['Nama'].value + "<br>";
   e.infoWindowHtml += "<b>Alamat: </b>" + e.row['Alamat'].value + "<br>";
   e.infoWindowHtml += "<b>Deskripsi: </b>" + e.row['Deskripsi'].value + "<br>";  
-  e.infoWindowHtml += "<a href = javascript:passing('" + e.row['Kode'].value + "')>Lihat penjelasan lebih detail</a>";  
+  if (index == 0)
+    e.infoWindowHtml += "<a href = javascript:passing('" + e.row['Kode'].value + "')>Lihat penjelasan lebih detail</a>";  
   e.infoWindowHtml += "</div>";
 
   infoWindow.setOptions({
@@ -103,11 +104,11 @@ function passing(kode)
     var global_latitude = data.rows[0][4];
     var global_longitude = data.rows[0][5];
     
-    document.getElementById("terminal").onchange = function() {detail(0, kode, nama, global_latitude, global_longitude);};
-    document.getElementById("stasiun").onchange = function() {detail(1, kode, nama, global_latitude, global_longitude);};
-    document.getElementById("hotel").onchange = function() {detail(2, kode, nama, global_latitude, global_longitude);};
-    document.getElementById("restoran").onchange = function() {detail(3, kode, nama, global_latitude, global_longitude);};
-    document.getElementById("wisata").onchange = function() {detail(4, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("term").onchange = function() {detail(0, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("sta").onchange = function() {detail(1, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("hot").onchange = function() {detail(2, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("rest").onchange = function() {detail(3, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("wis").onchange = function() {detail(4, kode, nama, global_latitude, global_longitude);};
     document.getElementById("all").onchange = function() {detail(5, kode, nama, global_latitude, global_longitude);};
     detail(5, kode, nama, global_latitude, global_longitude);
   }); 
@@ -142,29 +143,9 @@ function detail(index, kode, nama, lat, lon)
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
-    var infoWindow = new google.maps.InfoWindow();
-    var layer = new google.maps.FusionTablesLayer({
-      map: map,
-      suppressInfoWindows: true,
-      /*heatmap: { enabled: false },*/
-      query: {
-        select: "col2",
-        from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
-        where: sum
-      },
-      options: {
-        styleId: 2
-      }
-    });
-
-    var marker = new google.maps.Marker({
-      map: map,
-      position: new google.maps.LatLng(lat, lon),
-      /*title: 'The armpit of Cheshire'*/
-    });
-
     var circle = new google.maps.Circle({
       map: map,
+      clickable: false,
       center: new google.maps.LatLng(lat, lon),
       radius: 1000,    // metres
       fillColor: '#AA0000'
@@ -174,6 +155,7 @@ function detail(index, kode, nama, lat, lon)
 
     var circle2 = new google.maps.Circle({
       map: map,
+      clickable: false,
       center: new google.maps.LatLng(lat, lon),
       radius: 3000,    // metres
       fillColor: '#FF0000'
@@ -184,10 +166,35 @@ function detail(index, kode, nama, lat, lon)
 
     var circle3 = new google.maps.Circle({
       map: map,
+      clickable: false,
       center: new google.maps.LatLng(lat, lon),
       radius: 5000,    // metres
       fillColor: '#FF00FF'
     });
+
+    var infoWindow = new google.maps.InfoWindow();
+    var layer = new google.maps.FusionTablesLayer({
+      map: map,
+      suppressInfoWindows: true,
+      heatmap: { enabled: false },
+      query: {
+        select: "col2",
+        from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
+        where: sum
+      },
+      options: {
+        styleId: 2
+      }
+    });
+
+    google.maps.event.addListener(layer, 'click', function(e) {
+      windowLayer(1, e, infoWindow, map);
+    });
+
+    /*var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(lat, lon),
+    });*/
 
     //circle3.bindTo('center', marker, 'position');
     
@@ -208,9 +215,7 @@ function detail(index, kode, nama, lat, lon)
       }
     }
 
-    google.maps.event.addListener(layer, 'click', function(e) {
-      windowLayer(e, infoWindow, map);
-    });
+    
     detail_main(kode, nama, lat, lon);   
 }
 
