@@ -4,7 +4,6 @@ function ambil_peta_main() {
 }
 
 function ambil_peta() {
-    alert("cintaa");
     document.getElementById("main_map").style.display = "block";
   document.getElementById("detail").style.display = "none";      
 	  google.maps.visualRefresh = true;
@@ -85,7 +84,6 @@ function windowLayer(e, infoWindow, map)
 
 function passing(kode) 
 {
-  alert(kode);
   document.getElementById("main_map").style.display = "none";
   document.getElementById("detail").style.display = "block";
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
@@ -291,7 +289,7 @@ function mahasiswi_sort(kode, nama, res, distance) {
     var text = "";
     for (j = 0; j < arr_main.length; j++) {
         var jarak = arr_main[j].split(";");
-        var jarak_int = parseInt(jarak[1]);
+        var jarak_int = parseInt(jarak[2]);
         if (res < jarak_int) break;
         else {
           text += arr_main[j] + "-";
@@ -317,13 +315,13 @@ function list_place(index, place) {
   for (var i = 0; i<arr_list.length; i++) {
       var temp = arr_list[i].split(";");
       if (parseInt(temp[2]) <= 1000) {
-          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +"</li>";
+          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
       }
       else if (parseInt(temp[2]) > 1000 && parseInt(temp[2]) <= 3000) {
-          text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +"</li>";
+          text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
       }
       else if (parseInt(temp[2]) > 3000 && parseInt(temp[2]) <= 5000) {
-          text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +"</li>";
+          text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
       }
   }
   /*alert(text_seribu);
