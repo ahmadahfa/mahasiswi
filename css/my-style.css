@@ -24,12 +24,11 @@
 }
 
 .label {
-	margin: 20px auto;
+	margin: 0 auto;
     padding: 8px;
     font-size: 12px;
     font-weight: bold;
     color: #ffffff;
-    text-transform: uppercase;
     white-space: nowrap;
 	text-align: center;
     -webkit-border-radius: 3px;
@@ -47,7 +46,8 @@
     background-color: #46a546;
 }
 
-input[type=checkbox] {
-	visibility: hidden;
+#googft-mapCanvas {
+	position: absolute;
 }
+
 
