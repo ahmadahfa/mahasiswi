@@ -338,21 +338,21 @@ function list_place(index, place) {
 			document.getElementById("stasiun-1000").innerHTML = text_seribu;
 	  }
 	  else	{ 
-		document.getElementById("stasiun-1000").innerHTML="<span>Data tidak tersedia</span>";	  
+		document.getElementById("stasiun-1000").innerHTML="<span>Data Stasiun tidak tersedia pada range ini</span>";	  
 	  }
 	  
 	  if(text_tigaribu.length >0 ){
 		document.getElementById("stasiun-3000").innerHTML = text_tigaribu;
 	  }
 	  else {
-		document.getElementById("stasiun-3000").innerHTML="<span>Data tidak tersedia</span>";
+		document.getElementById("stasiun-3000").innerHTML="<span>Data Stasiun tidak tersedia pada range ini</span>";
 	  }
 	  
 	  if(text_limaribu.length>0){
 		document.getElementById("stasiun-5000").innerHTML = text_limaribu;
 	  }
 	  else {
-		document.getElementById("stasiun-5000").innerHTML ="<span>Data tidak tersedia</span>";
+		document.getElementById("stasiun-5000").innerHTML ="<span>Data Stasiun tidak tersedia pada range ini</span>";
 	  }
   } 
   else if (index == 1) {
@@ -360,27 +360,23 @@ function list_place(index, place) {
 		document.getElementById("terminal-1000").innerHTML = text_seribu;
 	  }
 	  else {
-		document.getElementById("terminal-1000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("terminal-1000").innerHTML = "<span>Data Terminal tidak tersedia pada range ini</span>";
 	  
 	  }
 	  if(text_tigaribu.length >0){
 		document.getElementById("terminal-3000").innerHTML = text_tigaribu;
 	  }
 	  else {
-		document.getElementById("terminal-3000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("terminal-3000").innerHTML = "<span>Data Terminal tidak tersedia pada range ini</span>";
 	  
 	  }
 	  if(text_limaribu.length >0){
 		 document.getElementById("terminal-5000").innerHTML = text_limaribu;
 	  }
 	  else {
-		document.getElementById("terminal-5000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("terminal-5000").innerHTML = "<span>Data Terminal tidak tersedia pada range ini</span>";
 	  
 	  }
-	  
-	  
-      
-      
      
   }
   else if (index == 2) {
@@ -388,19 +384,19 @@ function list_place(index, place) {
 		document.getElementById("hotel-1000").innerHTML = text_seribu;
 	  }
 	  else {
-		document.getElementById("hotel-1000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("hotel-1000").innerHTML = "<span>Data Hotel tidak tersedia pada ranger ini</span>";
 	  }
 	  if(text_tigaribu.length >0){
 		document.getElementById("hotel-3000").innerHTML = text_tigaribu;
 	  }
 	  else {
-		document.getElementById("hotel-3000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("hotel-3000").innerHTML = "<span>Data Hotel tidak tersedia pada range ini</span>";
 	  }
 	  if(text_limaribu.length >0){
 		document.getElementById("hotel-5000").innerHTML = text_limaribu;
 	  }
 	  else {
-		document.getElementById("hotel-5000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("hotel-5000").innerHTML = "<span>Data Hotel tidak tersedia pada range ini</span>";
 	  }
       
       
@@ -411,42 +407,40 @@ function list_place(index, place) {
 		document.getElementById("wisata-1000").innerHTML = text_seribu;
 	  }
 	  else {
-		document.getElementById("wisata-1000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("wisata-1000").innerHTML = "<span>Data Tempat Wisata tidak tersedia pada range ini</span>";
 	  }
 	  if(text_tigaribu.length >0){
 		document.getElementById("wisata-3000").innerHTML = text_tigaribu;
 	  }
 	  else {
-		document.getElementById("wisata-3000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("wisata-3000").innerHTML = "<span>Data Tempat Wisata tidak tersedia pada range ini</span>";
 	  }
 	  if(text_limaribu.length >0){
 		document.getElementById("wisata-5000").innerHTML = text_limaribu;
 	  }
 	  else {
-		document.getElementById("wisata-5000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("wisata-5000").innerHTML = "<span>Data Tempat Wisata tidak tersedia pada range ini</span>";
 	  }
-      
-      
-      
+          
   }
   else if (index == 4) {
 	  if(text_seribu.length >0){
 		document.getElementById("rumahmakan-1000").innerHTML = text_seribu;
 	  }
 	  else {
-		document.getElementById("rumahmakan-1000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("rumahmakan-1000").innerHTML = "<span>Data Tempat Makan tidak tersedia pada range ini</span>";
 	  }
 	  if(text_tigaribu.length >0){
 		document.getElementById("rumahmakan-3000").innerHTML = text_tigaribu;
 	  }
 	  else {
-		document.getElementById("rumahmakan-3000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("rumahmakan-3000").innerHTML = "<span>Data Tempat Makan tidak tersedia pada range ini</span>";
 	  }
 	  if(text_limaribu.length >0){
 		document.getElementById("rumahmakan-5000").innerHTML = text_limaribu;
 	  }
 	  else {
-		document.getElementById("rumahmakan-5000").innerHTML = "<span>Data tidak tersedia</span>";
+		document.getElementById("rumahmakan-5000").innerHTML = "<span>Data Tempat Makan tidak tersedia pada range ini</span>";
 	  }   
   }
 }
