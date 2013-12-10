@@ -37,17 +37,32 @@
 }
 .label.near {
 	margin: 15px 0 15px 0;
-    background-color: #c43c35;
+    background-color: #D1487E;
 }
+
+.accordion-inner {
+	overflow-y: scroll;
+	position: relative;
+	height: 300px;
+	max-height:200px;
+}
+
 .label.normal {
-    background-color: #f89406;
+    background-color: #E55072;
 }
 .label.far {
-    background-color: #46a546;
+    background-color: #C891FE;
 }
 
 #googft-mapCanvas {
 	position: absolute;
 }
 
+.radio-select{
+	margin-right:20px;
+}
+
+.radio-select-all{
+	margin-right:300px;
+}
 

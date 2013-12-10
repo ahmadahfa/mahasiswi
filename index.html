@@ -15,14 +15,15 @@
 		 <div class="navbar navbar-fixed-top">
 		   <div class="navbar-inner">
 			 <div class="container">
-				<a class="brand" href="index.html"> <img src="img/logo2.png" width="60px">  MAHASISWI</a>
+				<a class="brand" href="index.html"> <img src="img/logo2.png" width="60px"></a>
 				<div id = "menu">
-					<span id = "select" class = "cot">
-					  <input type="radio" class = "active" /><img src="img/terminal.png" width="40px">
-					  <input type="radio" class = "sel" /><img src="img/hotel.png" width="40px">
-					  <input type="radio" class = "sel" /><img src="img/hotel.png" width="40px">
-					  <input type="radio" class = "sel"/><img src="img/restaurant.png" width="40px">
-					  <input type="radio" class = "sel"/><img src="img/vacation.png" width="40px">
+					<span class = "btn-group" data-toggle="buttons-radio">
+					  <input name = "sel" type="radio" /><img src="img/terminal.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" /><img src="img/train.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" /><img src="img/hotel.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" /><img src="img/restaurant.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" /><img src="img/vacation.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" checked="checked"/><img src="img/all.png" width="40px" class = "radio-select-all"/>
 					</span>
 					<span class="label near">0 m - 1000 m</span>
 					<span class="label normal">1001 m - 3000 m</span>
@@ -41,7 +42,7 @@
 				<div class = "span4">
 					<div class="accordion" id="accordion2">
 					  <div class="accordion-group">
-						<div class="accordion-heading" style = "background-color:#bd3412;">
+						<div class="accordion-heading" style = "background-color:#2ba3ff;">
 						  <a class="accordion-toggle" style = "color:white; " data-toggle="collapse" data-parent="#accordion2" href="#stasiun">
 							Stasiun
 						  </a>
@@ -50,10 +51,11 @@
 						  <div class="accordion-inner">
 							0-1000m<br />
 							<ol id = "stasiun-1000">
-							</ol>
+							<button type="button" class="btn btn-success" data-toggle="button">Back</button><br />							
+							</ol><hr />
 							1001-3000m<br />
 							<ol id = "stasiun-3000">
-							</ol>
+							</ol><hr />
 							3001-5000m<br />
 							<ol id = "stasiun-5000">
 							</ol>
@@ -61,7 +63,7 @@
 						</div>
 					  </div>
 					  <div class="accordion-group">
-						<div class="accordion-heading" style = "background-color:#935278;">
+						<div class="accordion-heading" style = "background-color:#2ba3ff;">
 						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#terminal">
 							Terminal
 						  </a>
@@ -70,10 +72,10 @@
 						  <div class="accordion-inner">
 							0-1000m<br />
 							<ol id = "terminal-1000">
-							</ol>
+							</ol><hr />
 							1001-3000m<br />
 							<ol id = "terminal-3000">
-							</ol>
+							</ol><hr />
 							3001-5000m<br />
 							<ol id = "terminal-5000">
 							</ol>
@@ -81,7 +83,7 @@
 						</div>
 					  </div>
 					  <div class="accordion-group">
-						<div class="accordion-heading" style = "background-color:#359862;">
+						<div class="accordion-heading" style = "background-color:#2ba3ff;">
 						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#rumahmakan">
 							Rumah Makan
 						  </a>
@@ -90,10 +92,10 @@
 						  <div class="accordion-inner">
 							0-1000m<br />
 							<ol id = "rumahmakan-1000">
-							</ol>
+							</ol><hr />
 							1001-3000m<br />
 							<ol id = "rumahmakan-3000">
-							</ol>
+							</ol><hr />
 							3001-5000m<br />
 							<ol id = "rumahmakan-5000">
 							</ol>
@@ -101,7 +103,7 @@
 						</div>
 					  </div>
 					  <div class="accordion-group">
-						<div class="accordion-heading" style = "background-color:#aaf372;">
+						<div class="accordion-heading" style = "background-color:#2ba3ff;">
 						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#hotel">
 							Hotel
 						  </a>
@@ -110,10 +112,10 @@
 						  <div class="accordion-inner">
 							0-1000m<br />
 							<ol id = "hotel-1000">
-							</ol>
+							</ol><hr />
 							1001-3000m<br />
 							<ol id = "hotel-3000">
-							</ol>
+							</ol><hr />
 							3001-5000m<br />
 							<ol id = "hotel-5000">
 							</ol>
@@ -121,7 +123,7 @@
 						</div>
 					  </div>
 					  <div class="accordion-group">
-						<div class="accordion-heading" style = "background-color:#193f52;">
+						<div class="accordion-heading" style = "background-color:#2ba3ff;">
 						  <a class="accordion-toggle" style = "color:white;" data-toggle="collapse" data-parent="#accordion2" href="#wisata">
 							Tempat Wisata
 						  </a>
@@ -130,10 +132,10 @@
 						  <div class="accordion-inner">
 							0-1000m<br />
 							<ol id = "wisata-1000">
-							</ol>
+							</ol><hr />
 							1001-3000m<br />
 							<ol id = "wisata-3000">
-							</ol>
+							</ol><hr />
 							3001-5000m<br />
 							<ol id = "wisata-5000">
 							</ol>
