@@ -31,7 +31,7 @@ function ambil_peta() {
     var layer = new google.maps.FusionTablesLayer({
       map: map,
       suppressInfoWindows: true,
-      heatmap: { enabled: false },
+      /*heatmap: { enabled: false },*/
       query: {
         select: "col2",
         from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
@@ -132,7 +132,7 @@ function detail(kode, nama, lat, lon)
     var layer = new google.maps.FusionTablesLayer({
       map: map,
       suppressInfoWindows: true,
-      heatmap: { enabled: false },
+      /*heatmap: { enabled: false },*/
       query: {
         select: "col2",
         from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
@@ -151,28 +151,31 @@ function detail(kode, nama, lat, lon)
 
     var circle = new google.maps.Circle({
       map: map,
+      center: new google.maps.LatLng(lat, lon),
       radius: 1000,    // metres
       fillColor: '#AA0000'
     });
 
-    circle.bindTo('center', marker, 'position');
+    //circle.bindTo('center', marker, 'position');
 
     var circle2 = new google.maps.Circle({
       map: map,
+      center: new google.maps.LatLng(lat, lon),
       radius: 3000,    // metres
       fillColor: '#FF0000'
     });
 
 
-    circle2.bindTo('center', marker, 'position');
+    //circle2.bindTo('center', marker, 'position');
 
     var circle3 = new google.maps.Circle({
       map: map,
+      center: new google.maps.LatLng(lat, lon),
       radius: 5000,    // metres
       fillColor: '#FF00FF'
     });
 
-    circle3.bindTo('center', marker, 'position');
+    //circle3.bindTo('center', marker, 'position');
     
     if (isMobile) {
       var legend = document.getElementById('googft-legend');
@@ -191,6 +194,9 @@ function detail(kode, nama, lat, lon)
       }
     }
 
+    google.maps.event.addListener(layer, 'click', function(e) {
+      windowLayer(e, infoWindow, map);
+    });
     detail_main(kode, nama, lat, lon);   
 }
 
@@ -424,10 +430,7 @@ function list_place(index, place) {
 	  }
 	  else {
 		document.getElementById("wisata-5000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-      
-      
-      
+	  }      
   }
   else if (index == 4) {
 	  if(text_seribu.length >0){
