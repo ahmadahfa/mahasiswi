@@ -5,7 +5,9 @@ function ambil_peta_main() {
 
 function ambil_peta() {
     document.getElementById("main_map").style.display = "block";
-  document.getElementById("detail").style.display = "none";      
+    document.getElementById("detail").style.display = "none";      
+    document.getElementById("menu").style.display = "none";    
+
 	  google.maps.visualRefresh = true;
 
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
@@ -84,8 +86,11 @@ function windowLayer(e, infoWindow, map)
 
 function passing(kode) 
 {
+
   document.getElementById("main_map").style.display = "none";
-  document.getElementById("detail").style.display = "block";
+  document.getElementById("detail").style.display = "block";      
+  document.getElementById("menu").style.display = "block";      
+
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
   var URLwhere = " where Kode IN '" + kode + "'";
