@@ -263,11 +263,17 @@ function get_around_place(kode, nama, lat, lon) {
           else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
           else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-";
       }
-      alert("Stasiun " + stasiun);
+      /*alert("Stasiun " + stasiun);
       alert("Terminal " + terminal);
       alert("Hotel " + hotel);
       alert("Wisata " + wisata);
-      alert("rumah_makan " + rumah_makan);
+      alert("rumah_makan " + rumah_makan);*/
+
+      list_place(0, stasiun);
+      list_place(1, terminal);
+      list_place(2, hotel);
+      list_place(3, wisata);
+      list_place(4, rumah_makan);
 	 }); 
 	
 }
@@ -300,8 +306,54 @@ function mahasiswi_sort(kode, nama, res, distance) {
   }
 }
 
-function getDistance(){
+function list_place(index, place) {
+  
+  //alert(place);
+  var text_seribu = "";
+  var text_tigaribu = "";
+  var text_limaribu = "";
+  var sem = "";
+  var arr_list = place.split("-");
+  for (var i = 0; i<arr_list.length; i++) {
+      var temp = arr_list[i].split(";");
+      if (parseInt(temp[2]) <= 1000) {
+          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +"</li>";
+      }
+      else if (parseInt(temp[2]) > 1000 && parseInt(temp[2]) <= 3000) {
+          text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +"</li>";
+      }
+      else if (parseInt(temp[2]) > 3000 && parseInt(temp[2]) <= 5000) {
+          text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +"</li>";
+      }
+  }
+  /*alert(text_seribu);
+  alert(text_tigaribu);
+  alert(text_limaribu);*/  
+  if (index == 0) {
+      document.getElementById("stasiun-1000").innerHTML = text_seribu;
+      document.getElementById("stasiun-3000").innerHTML = text_tigaribu;
+      document.getElementById("stasiun-5000").innerHTML = text_limaribu;
+  } 
+  else if (index == 1) {
+      document.getElementById("terminal-1000").innerHTML = text_seribu;
+      document.getElementById("terminal-3000").innerHTML = text_tigaribu;
+      document.getElementById("terminal-5000").innerHTML = text_limaribu;
+  }
+  else if (index == 2) {
+      document.getElementById("hotel-1000").innerHTML = text_seribu;
+      document.getElementById("hotel-3000").innerHTML = text_tigaribu;
+      document.getElementById("hotel-5000").innerHTML = text_limaribu;
+  }
+  else if (index == 3) {
+      document.getElementById("wisata-1000").innerHTML = text_seribu;
+      document.getElementById("wisata-3000").innerHTML = text_tigaribu;
+      document.getElementById("wisata-5000").innerHTML = text_limaribu;
+  }
+  else if (index == 4) {
+      document.getElementById("rumahmakan-1000").innerHTML = text_seribu;
+      document.getElementById("rumahmakan-3000").innerHTML = text_tigaribu;
+      document.getElementById("rumahmakan-5000").innerHTML = text_limaribu;
+  }
 
 }
-
 
