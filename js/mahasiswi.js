@@ -19,7 +19,7 @@ function ambil_peta() {
     }
 
     var mapDiv = document.getElementById('googft-mapCanvas');
-    mapDiv.style.width = isMobile ? '100%' : '80%';
+    mapDiv.style.width = isMobile ? '100%' : '1200px';
     mapDiv.style.height = isMobile ? '100%' : '400px';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(-6.226256262359782, 106.88347505859372),
@@ -103,25 +103,39 @@ function passing(kode)
     var global_latitude = data.rows[0][4];
     var global_longitude = data.rows[0][5];
     
-    detail(kode, nama, global_latitude, global_longitude);
+    document.getElementById("terminal").onchange = function() {detail(0, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("stasiun").onchange = function() {detail(1, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("hotel").onchange = function() {detail(2, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("restoran").onchange = function() {detail(3, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("wisata").onchange = function() {detail(4, kode, nama, global_latitude, global_longitude);};
+    document.getElementById("all").onchange = function() {detail(5, kode, nama, global_latitude, global_longitude);};
+    detail(5, kode, nama, global_latitude, global_longitude);
   }); 
 }
 
-function detail(kode, nama, lat, lon)
+function detail(index, kode, nama, lat, lon)
 {
+    var sum = "";
+    if (index == 0) sum = "Tipe IN 'terminal'";
+    else if (index == 1) sum = "Tipe IN 'stasiun'";
+    else if (index == 2) sum = "Tipe IN 'hotel'";
+    else if (index == 3) sum = "Tipe IN 'restoran'";
+    else if (index == 4) sum = "Tipe IN 'wisata'";
     google.maps.visualRefresh = true;
 
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
       (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
     
     if (isMobile) {
+
+      
       var viewport = document.querySelector("meta[name=viewport]");
       viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
     }
 
     var mapDiv = document.getElementById('detail-googft-mapCanvas');
     mapDiv.style.width = isMobile ? '100%' : '800px';
-    mapDiv.style.height = isMobile ? '100%' : '500px';
+    mapDiv.style.height = isMobile ? '100%' : '450px';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(lat, lon),
       zoom: 14,
@@ -136,7 +150,7 @@ function detail(kode, nama, lat, lon)
       query: {
         select: "col2",
         from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
-        where: ""
+        where: sum
       },
       options: {
         styleId: 2

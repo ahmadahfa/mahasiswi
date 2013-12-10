@@ -18,12 +18,12 @@
 				<a class="brand" href="index.html"> <img src="img/logo2.png" width="60px"></a>
 				<div id = "menu">
 					<span class = "btn-group" data-toggle="buttons-radio">
-					  <input name = "sel" type="radio" /><img src="img/terminal.png" width="40px" class = "radio-select"/>
-					  <input name = "sel" type="radio" /><img src="img/train.png" width="40px" class = "radio-select"/>
-					  <input name = "sel" type="radio" /><img src="img/hotel.png" width="40px" class = "radio-select"/>
-					  <input name = "sel" type="radio" /><img src="img/restaurant.png" width="40px" class = "radio-select"/>
-					  <input name = "sel" type="radio" /><img src="img/vacation.png" width="40px" class = "radio-select"/>
-					  <input name = "sel" type="radio" checked="checked"/><img src="img/all.png" width="40px" class = "radio-select-all"/>
+					  <input name = "sel" type="radio" id = "terminal" /><img src="img/terminal.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" id = "stasiun"/><img src="img/train.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" id = "hotel"/><img src="img/hotel.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" id = "restoran"/><img src="img/restaurant.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" id = "wisata"/><img src="img/vacation.png" width="40px" class = "radio-select"/>
+					  <input name = "sel" type="radio" id = "all" checked="checked"/><img src="img/all.png" width="40px" class = "radio-select-all"/>
 					</span>
 					<span class="label near">0 m - 1000 m</span>
 					<span class="label normal">1001 m - 3000 m</span>
@@ -38,7 +38,7 @@
 			<div class="span12" id = "main_map" style = "display:block;">
 				<div  id = "googft-mapCanvas" style= "margin: 0 auto;"></div>
 				</br>
-				<a id="tim" href="pecinta_mahasiswi.html">Copyright 2013: PecintaMahasiswiLabs</a>
+				<!-- <a id="tim" href="pecinta_mahasiswi.html">Copyright 2013: PecintaMahasiswiLabs</a> -->
 				</br></br>
 			</div>
 			<div id = "detail" style = "display:none;">
@@ -52,14 +52,14 @@
 						</div>
 						<div id="stasiun" class="accordion-body collapse in">
 						  <div class="accordion-inner">
-							0-1000m<br />
+							<b>Radius 0 - 1000m</b>br />
 							<ol id = "stasiun-1000">
 							<button type="button" class="btn btn-success" data-toggle="button">Back</button><br />							
 							</ol><hr />
-							1001-3000m<br />
+							<b>Radius 1001 - 3000m</b><br />
 							<ol id = "stasiun-3000">
 							</ol><hr />
-							3001-5000m<br />
+							<b>Radius 3001 - 5000m</b><br />
 							<ol id = "stasiun-5000">
 							</ol>
 						  </div>
@@ -73,13 +73,13 @@
 						</div>
 						<div id="terminal" class="accordion-body collapse">
 						  <div class="accordion-inner">
-							0-1000m<br />
+							<b>Radius 0 - 1000m</b><br />
 							<ol id = "terminal-1000">
 							</ol><hr />
-							1001-3000m<br />
+							<b>Radius 1001 - 3000m</b><br />
 							<ol id = "terminal-3000">
 							</ol><hr />
-							3001-5000m<br />
+							<b>Radius 3001 - 5000m</b><br />
 							<ol id = "terminal-5000">
 							</ol>
 						  </div>
@@ -93,13 +93,13 @@
 						</div>
 						<div id="rumahmakan" class="accordion-body collapse">
 						  <div class="accordion-inner">
-							0-1000m<br />
+							<b>Radius 0 - 1000m</b><br />
 							<ol id = "rumahmakan-1000">
 							</ol><hr />
-							1001-3000m<br />
+							<b>Radius 1001 - 3000m</b><br />
 							<ol id = "rumahmakan-3000">
 							</ol><hr />
-							3001-5000m<br />
+							<b>Radius 3001 - 5000m</b><br />
 							<ol id = "rumahmakan-5000">
 							</ol>
 						  </div>
@@ -113,13 +113,13 @@
 						</div>
 						<div id="hotel" class="accordion-body collapse">
 						  <div class="accordion-inner">
-							0-1000m<br />
+							<b>Radius 0 - 1000m</b><br />
 							<ol id = "hotel-1000">
 							</ol><hr />
-							1001-3000m<br />
+							<b>Radius 1001 - 3000m</b><br />
 							<ol id = "hotel-3000">
 							</ol><hr />
-							3001-5000m<br />
+							<b>Radius 3001 - 5000m</b><br />
 							<ol id = "hotel-5000">
 							</ol>
 						  </div>
@@ -133,13 +133,13 @@
 						</div>
 						<div id="wisata" class="accordion-body collapse">
 						  <div class="accordion-inner">
-							0-1000m<br />
+							<b>Radius 0 - 1000m</b><br />
 							<ol id = "wisata-1000">
 							</ol><hr />
-							1001-3000m<br />
+							<b>Radius 1001 - 3000m</b><br />
 							<ol id = "wisata-3000">
 							</ol><hr />
-							3001-5000m<br />
+							<b>Radius 3001 - 5000m</b><br />
 							<ol id = "wisata-5000">
 							</ol>
 						  </div>
@@ -164,8 +164,8 @@
 					<button type="button" class="btn btn-success" data-toggle="button">Back</button><br />							
 				</div>
 				<div class = "span8" id = "detail-googft-mapCanvas">
-					<a id="tim" href="pecinta_mahasiswi.html">Copyright 2013: PecintaMahasiswiLabs</a>
 				</div>
+				<!-- <a id="tim" href="pecinta_mahasiswi.html">Copyright 2013: PecintaMahasiswiLabs</a> -->
 			</div>
 		</div>
 	</div>
