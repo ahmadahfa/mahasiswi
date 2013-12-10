@@ -1,3 +1,13 @@
+@font-face{
+	font-family: font-aku;
+	/*src: url(BordersDivideButHeartsShallConquer.ttf);*/
+	/*src: url(GeosansLight.ttf);*/
+}
+
+body{
+	/*font-family: font-aku;*/
+}
+
 #container{
 	margin-top: 3%;
 }
@@ -47,7 +57,27 @@
 }
 
 #googft-mapCanvas {
-	position: absolute;
+	/*position: absolute;*/
 }
 
+.accordion-inner{
+	overflow-y: scroll;
+	position: relative;
+	height: 300px;
+	max-height:180px;
+}
 
+#tim{
+	/*margin-left: 60%;*/
+	color:black;
+	text-decoration:none;
+	margin-left: 39%;
+}
+
+#tim:hover{
+	color:green;
+}
+
+#footer{
+	text-align: center;
+}

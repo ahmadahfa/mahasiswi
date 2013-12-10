@@ -19,8 +19,8 @@ function ambil_peta() {
     }
 
     var mapDiv = document.getElementById('googft-mapCanvas');
-    mapDiv.style.width = isMobile ? '100%' : '1200px';
-    mapDiv.style.height = isMobile ? '100%' : '500px';
+    mapDiv.style.width = isMobile ? '100%' : '80%';
+    mapDiv.style.height = isMobile ? '100%' : '400px';
     var map = new google.maps.Map(mapDiv, {
       center: new google.maps.LatLng(-6.226256262359782, 106.88347505859372),
       zoom: 11,
