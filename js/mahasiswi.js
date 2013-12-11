@@ -1,14 +1,18 @@
-
+var directionsDisplay;
+var mapss;
+var directionsService = new google.maps.DirectionsService();
 function ambil_peta_main() {
-	 google.maps.event.addDomListener(window, 'load', ambil_peta);
+   google.maps.event.addDomListener(window, 'load', ambil_peta);
 }
 
 function ambil_peta() {
     document.getElementById("main_map").style.display = "block";
     document.getElementById("detail").style.display = "none";      
+    document.getElementById("map_custom").style.display = "none";      
+    document.getElementById("map_route").style.display = "none";      
     document.getElementById("menu").style.display = "none";    
 
-	  google.maps.visualRefresh = true;
+    google.maps.visualRefresh = true;
 
     var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
       (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
@@ -89,8 +93,17 @@ function passing(kode)
 {
 
   document.getElementById("main_map").style.display = "none";
-  document.getElementById("detail").style.display = "block";      
+  document.getElementById("detail").style.display = "block";    
+  document.getElementById("map_custom").style.display = "block";      
+  document.getElementById("map_route").style.display = "none";        
   document.getElementById("menu").style.display = "block";      
+
+  document.getElementById("term").disabled = false;
+  document.getElementById("sta").disabled = false;
+  document.getElementById("hot").disabled = false;
+  document.getElementById("wis").disabled = false;
+  document.getElementById("rest").disabled = false;
+  document.getElementById("all").disabled = false;
 
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
@@ -141,6 +154,13 @@ function detail(index, kode, nama, lat, lon)
       center: new google.maps.LatLng(lat, lon),
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP
+
+    });
+
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(lat, lon),
+      //animation: google.maps.Animation.BOUNCE 
     });
 
     var circle = new google.maps.Circle({
@@ -229,12 +249,12 @@ function get_around_place(kode, nama, lat, lon) {
     var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
     var URLwhere = " where Kode NOT EQUAL TO '" + kode + "'";
     var URLkey = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
-  	var query = URLHead + URLTable + URLwhere + URLkey;
-  	var distance_seribu = "";
+    var query = URLHead + URLTable + URLwhere + URLkey;
+    var distance_seribu = "";
     var distance_tigaribu = "";
     var distance_limaribu = "";
-	  $.get(query, function (data) {
-      for (var i = 0; i < data.rows.length; i++)	 {
+    $.get(query, function (data) {
+      for (var i = 0; i < data.rows.length; i++)   {
         var kode2 = data.rows[i][0];
         var nama2 = data.rows[i][2];
         var lat2 = data.rows[i][4];
@@ -244,7 +264,7 @@ function get_around_place(kode, nama, lat, lon) {
         var koor2 = new google.maps.LatLng(lat2, lon2);
         var res  = google.maps.geometry.spherical.computeDistanceBetween(koor1,koor2);
        // alert(res + " " + (res + 2000));
-		var central_temp = lat2 + ";" + lon2;
+    var central_temp = lat2 + ";" + lon2;
         if (res <= 1000) {
           distance_seribu = mahasiswi_sort(kode2, nama2, res, central_temp, distance_seribu);
           //alert(distance_seribu) ;
@@ -259,7 +279,7 @@ function get_around_place(kode, nama, lat, lon) {
       /*alert(distance_seribu);
       alert(distance_tigaribu);
       alert(distance_limaribu);*/
-	  var central = lat + ";" + lon;
+    var central = lat + ";" + lon;
       var stasiun = "";
       var terminal = "";
       var rumah_makan = "";
@@ -299,13 +319,13 @@ function get_around_place(kode, nama, lat, lon) {
       alert("Wisata " + wisata);
       alert("rumah_makan " + rumah_makan);*/
 
-      list_place(0, stasiun, central);
-      list_place(1, terminal, central);
-      list_place(2, hotel, central);
-      list_place(3, wisata, central);
-      list_place(4, rumah_makan, central);
-	 }); 
-	
+      list_place(0, kode, stasiun, central);
+      list_place(1, kode, terminal, central);
+      list_place(2, kode, hotel, central);
+      list_place(3, kode, wisata, central);
+      list_place(4, kode, rumah_makan, central);
+   }); 
+  
 }
 
 function mahasiswi_sort(kode, nama, res, central_temp, distance) {
@@ -336,7 +356,7 @@ function mahasiswi_sort(kode, nama, res, central_temp, distance) {
   }
 }
 
-function list_place(index, place, central) {
+function list_place(index, kode, place, central) {
   
   //alert(place);
   var text_seribu = "";
@@ -346,141 +366,204 @@ function list_place(index, place, central) {
   var arr_list = place.split("/");
   for (var i = 0; i<arr_list.length; i++) {
       var temp = arr_list[i].split(";");
-	  var coordinate = temp[2] + ";" + temp[3] + ";" + central;
+    var coordinate = kode + ";" + temp[2] + ";" + temp[3] + ";" + central;
       if (parseInt(temp[4]) <= 1000) {
-		
+    
           text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
           text_seribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
       else if (parseInt(temp[4]) > 1000 && parseInt(temp[4]) <= 3000) {
           text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
-		  text_tigaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
+      text_tigaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
       else if (parseInt(temp[4]) > 3000 && parseInt(temp[4]) <= 5000) {
           text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
-		  text_limaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
+      text_limaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
   }
   /*alert(text_seribu);
   alert(text_tigaribu);
   alert(text_limaribu);*/  
-  if (index == 0) {	
+  if (index == 0) { 
       
-	  if(text_seribu.length >0) {
-			document.getElementById("stasiun-1000").innerHTML = text_seribu;
-	  }
-	  else	{ 
-		document.getElementById("stasiun-1000").innerHTML="<span>Data tidak tersedia</span>";	  
-	  }
-	  
-	  if(text_tigaribu.length >0 ){
-		document.getElementById("stasiun-3000").innerHTML = text_tigaribu;
-	  }
-	  else {
-		document.getElementById("stasiun-3000").innerHTML="<span>Data tidak tersedia</span>";
-	  }
-	  
-	  if(text_limaribu.length>0){
-		document.getElementById("stasiun-5000").innerHTML = text_limaribu;
-	  }
-	  else {
-		document.getElementById("stasiun-5000").innerHTML ="<span>Data tidak tersedia</span>";
-	  }
+    if(text_seribu.length >0) {
+      document.getElementById("stasiun-1000").innerHTML = text_seribu;
+    }
+    else  { 
+    document.getElementById("stasiun-1000").innerHTML="<span>Data tidak tersedia</span>";   
+    }
+    
+    if(text_tigaribu.length >0 ){
+    document.getElementById("stasiun-3000").innerHTML = text_tigaribu;
+    }
+    else {
+    document.getElementById("stasiun-3000").innerHTML="<span>Data tidak tersedia</span>";
+    }
+    
+    if(text_limaribu.length>0){
+    document.getElementById("stasiun-5000").innerHTML = text_limaribu;
+    }
+    else {
+    document.getElementById("stasiun-5000").innerHTML ="<span>Data tidak tersedia</span>";
+    }
   } 
   else if (index == 1) {
-	  if(text_seribu.length >0){
-		document.getElementById("terminal-1000").innerHTML = text_seribu;
-	  }
-	  else {
-		document.getElementById("terminal-1000").innerHTML = "<span>Data tidak tersedia</span>";
-	  
-	  }
-	  if(text_tigaribu.length >0){
-		document.getElementById("terminal-3000").innerHTML = text_tigaribu;
-	  }
-	  else {
-		document.getElementById("terminal-3000").innerHTML = "<span>Data tidak tersedia</span>";
-	  
-	  }
-	  if(text_limaribu.length >0){
-		 document.getElementById("terminal-5000").innerHTML = text_limaribu;
-	  }
-	  else {
-		document.getElementById("terminal-5000").innerHTML = "<span>Data tidak tersedia</span>";
-	  
-	  }
-	  
-	  
+    if(text_seribu.length >0){
+    document.getElementById("terminal-1000").innerHTML = text_seribu;
+    }
+    else {
+    document.getElementById("terminal-1000").innerHTML = "<span>Data tidak tersedia</span>";
+    
+    }
+    if(text_tigaribu.length >0){
+    document.getElementById("terminal-3000").innerHTML = text_tigaribu;
+    }
+    else {
+    document.getElementById("terminal-3000").innerHTML = "<span>Data tidak tersedia</span>";
+    
+    }
+    if(text_limaribu.length >0){
+     document.getElementById("terminal-5000").innerHTML = text_limaribu;
+    }
+    else {
+    document.getElementById("terminal-5000").innerHTML = "<span>Data tidak tersedia</span>";
+    
+    }
+    
+    
       
       
      
   }
   else if (index == 2) {
-	  if(text_seribu.length >0){
-		document.getElementById("hotel-1000").innerHTML = text_seribu;
-	  }
-	  else {
-		document.getElementById("hotel-1000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-	  if(text_tigaribu.length >0){
-		document.getElementById("hotel-3000").innerHTML = text_tigaribu;
-	  }
-	  else {
-		document.getElementById("hotel-3000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-	  if(text_limaribu.length >0){
-		document.getElementById("hotel-5000").innerHTML = text_limaribu;
-	  }
-	  else {
-		document.getElementById("hotel-5000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
+    if(text_seribu.length >0){
+    document.getElementById("hotel-1000").innerHTML = text_seribu;
+    }
+    else {
+    document.getElementById("hotel-1000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
+    if(text_tigaribu.length >0){
+    document.getElementById("hotel-3000").innerHTML = text_tigaribu;
+    }
+    else {
+    document.getElementById("hotel-3000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
+    if(text_limaribu.length >0){
+    document.getElementById("hotel-5000").innerHTML = text_limaribu;
+    }
+    else {
+    document.getElementById("hotel-5000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
       
       
       
   }
   else if (index == 3) {
-	  if(text_seribu.length >0){
-		document.getElementById("wisata-1000").innerHTML = text_seribu;
-	  }
-	  else {
-		document.getElementById("wisata-1000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-	  if(text_tigaribu.length >0){
-		document.getElementById("wisata-3000").innerHTML = text_tigaribu;
-	  }
-	  else {
-		document.getElementById("wisata-3000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-	  if(text_limaribu.length >0){
-		document.getElementById("wisata-5000").innerHTML = text_limaribu;
-	  }
-	  else {
-		document.getElementById("wisata-5000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }      
+    if(text_seribu.length >0){
+    document.getElementById("wisata-1000").innerHTML = text_seribu;
+    }
+    else {
+    document.getElementById("wisata-1000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
+    if(text_tigaribu.length >0){
+    document.getElementById("wisata-3000").innerHTML = text_tigaribu;
+    }
+    else {
+    document.getElementById("wisata-3000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
+    if(text_limaribu.length >0){
+    document.getElementById("wisata-5000").innerHTML = text_limaribu;
+    }
+    else {
+    document.getElementById("wisata-5000").innerHTML = "<span>Data tidak tersedia</span>";
+    }      
   }
   else if (index == 4) {
-	  if(text_seribu.length >0){
-		document.getElementById("rumahmakan-1000").innerHTML = text_seribu;
-	  }
-	  else {
-		document.getElementById("rumahmakan-1000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-	  if(text_tigaribu.length >0){
-		document.getElementById("rumahmakan-3000").innerHTML = text_tigaribu;
-	  }
-	  else {
-		document.getElementById("rumahmakan-3000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }
-	  if(text_limaribu.length >0){
-		document.getElementById("rumahmakan-5000").innerHTML = text_limaribu;
-	  }
-	  else {
-		document.getElementById("rumahmakan-5000").innerHTML = "<span>Data tidak tersedia</span>";
-	  }   
+    if(text_seribu.length >0){
+    document.getElementById("rumahmakan-1000").innerHTML = text_seribu;
+    }
+    else {
+    document.getElementById("rumahmakan-1000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
+    if(text_tigaribu.length >0){
+    document.getElementById("rumahmakan-3000").innerHTML = text_tigaribu;
+    }
+    else {
+    document.getElementById("rumahmakan-3000").innerHTML = "<span>Data tidak tersedia</span>";
+    }
+    if(text_limaribu.length >0){
+    document.getElementById("rumahmakan-5000").innerHTML = text_limaribu;
+    }
+    else {
+    document.getElementById("rumahmakan-5000").innerHTML = "<span>Data tidak tersedia</span>";
+    }   
   }
 }
 
 function getDistance(coordinate) {
-  alert(coordinate);
+  
+  document.getElementById("term").disabled = true;
+  document.getElementById("sta").disabled = true;
+  document.getElementById("hot").disabled = true;
+  document.getElementById("wis").disabled = true;
+  document.getElementById("rest").disabled = true;
+  document.getElementById("all").disabled = true;
+
+  document.getElementById("map_custom").style.display = "none";      
+  document.getElementById("map_route").style.display = "block";      
+  var sementara = coordinate.split(";");
+  var lonpusat = sementara[4];
+  var latpusat = sementara[3];
+  var lon_target = sementara[2];
+  var lat_target = sementara[1];
+  var kode_lagi = sementara[0];
+  document.getElementById("back_route").onclick = function() {
+    passing(kode_lagi);
+  };
+  //alert(sementara);
+  var directionsDisplay = new google.maps.DirectionsRenderer();
+  var directionsService = new google.maps.DirectionsService();
+  
+  var pusat = new google.maps.LatLng(parseFloat(latpusat), parseFloat(lonpusat));
+  var target = new google.maps.LatLng(parseFloat(lat_target), parseFloat(lon_target));
+
+  var mapDiv = document.getElementById('detail-googft-mapCanvas');
+  var map = new google.maps.Map(mapDiv, {
+    center: pusat,
+    zoom: 11,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  directionsDisplay.setMap(map);
+
+  var request = {
+        origin: pusat,
+        destination: target,
+        travelMode: google.maps.DirectionsTravelMode.WALKING
+    };
+  directionsService.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+        var route = response.routes[0];
+        for (var i = 0; i < route.legs.length; i++) {
+          //alert(i + " " + route.legs[i]);
+        }
+        //computeTotalDistance(response)
+      } else {
+        alert("directions response "+status);
+      }
+    });
+  
 }
 
+function computeTotalDistance(result) {
+      var totalDist = 0;
+      var totalTime = 0;
+      var myroute = result.routes[0];
+      for (i = 0; i < myroute.legs.length; i++) {
+        totalDist += myroute.legs[i].distance.value;
+        totalTime += myroute.legs[i].duration.value;      
+      }
+      totalDist = totalDist / 1000.
+     alert(totalDist);
+}
