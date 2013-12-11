@@ -244,52 +244,54 @@ function get_around_place(kode, nama, lat, lon) {
         var koor2 = new google.maps.LatLng(lat2, lon2);
         var res  = google.maps.geometry.spherical.computeDistanceBetween(koor1,koor2);
        // alert(res + " " + (res + 2000));
+		var central_temp = lat2 + ";" + lon2;
         if (res <= 1000) {
-          distance_seribu = mahasiswi_sort(kode2, nama2, res, distance_seribu);
+          distance_seribu = mahasiswi_sort(kode2, nama2, res, central_temp, distance_seribu);
           //alert(distance_seribu) ;
         }
         else if (res > 1000 && res <= 3000) {
-          distance_tigaribu = mahasiswi_sort(kode2, nama2, res, distance_tigaribu);
+          distance_tigaribu = mahasiswi_sort(kode2, nama2, res, central_temp, distance_tigaribu);
         }
         else if (res > 3000 && res < 5000) {
-          distance_limaribu = mahasiswi_sort(kode2, nama2, res, distance_limaribu);
+          distance_limaribu = mahasiswi_sort(kode2, nama2, res, central_temp, distance_limaribu);
         } 
       }
       /*alert(distance_seribu);
       alert(distance_tigaribu);
       alert(distance_limaribu);*/
+	  var central = lat + ";" + lon;
       var stasiun = "";
       var terminal = "";
       var rumah_makan = "";
       var hotel = "";
       var wisata = "";
-      var arr_distance = distance_seribu.split("-");
+      var arr_distance = distance_seribu.split("/");
       for (var j = 0; j<arr_distance.length; j++) {
           var temp = arr_distance[j].split(";");
-          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "-";
-          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "-";
-          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "-";
-          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
-          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-";
+          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "/";
+          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "/";
+          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "/";
+          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "/";
+          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "/";
       }
-      arr_distance = distance_tigaribu.split("-");
+      arr_distance = distance_tigaribu.split("/");
       for (var j = 0; j<arr_distance.length; j++) {
           var temp = arr_distance[j].split(";");
-          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "-";
-          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "-";
-          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "-";
-          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
-          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-"; 
+          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "/";
+          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "/";
+          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "/";
+          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "/";
+          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "/"; 
       }
 
-      arr_distance = distance_limaribu.split("-");
+      arr_distance = distance_limaribu.split("/");
       for (var j = 0; j<arr_distance.length; j++) {
           var temp = arr_distance[j].split(";");
-          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "-";
-          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "-";
-          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "-";
-          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "-";
-          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "-";
+          if (temp[0].indexOf("STA") !== -1) stasiun += arr_distance[j] + "/";
+          else if (temp[0].indexOf("TER") !== -1) terminal += arr_distance[j] + "/";
+          else if (temp[0].indexOf("HOT") !== -1) hotel += arr_distance[j] + "/";
+          else if (temp[0].indexOf("WIS") !== -1) wisata += arr_distance[j] + "/";
+          else if (temp[0].indexOf("RES") !== -1) rumah_makan += arr_distance[j] + "/";
       }
       /*alert("Stasiun " + stasiun);
       alert("Terminal " + terminal);
@@ -297,20 +299,20 @@ function get_around_place(kode, nama, lat, lon) {
       alert("Wisata " + wisata);
       alert("rumah_makan " + rumah_makan);*/
 
-      list_place(0, stasiun);
-      list_place(1, terminal);
-      list_place(2, hotel);
-      list_place(3, wisata);
-      list_place(4, rumah_makan);
+      list_place(0, stasiun, central);
+      list_place(1, terminal, central);
+      list_place(2, hotel, central);
+      list_place(3, wisata, central);
+      list_place(4, rumah_makan, central);
 	 }); 
 	
 }
 
-function mahasiswi_sort(kode, nama, res, distance) {
-  var arr_main = distance.split("-");
+function mahasiswi_sort(kode, nama, res, central_temp, distance) {
+  var arr_main = distance.split("/");
   //alert(arr_seribu.length);
   if (arr_main.length == 0) {
-       distance = kode + ";" + nama + ";" +  res + "-";
+       distance = kode + ";" + nama + ";" + central_temp + ";" + res + "/";
        //alert(distance);
        return distance;
   }
@@ -319,40 +321,44 @@ function mahasiswi_sort(kode, nama, res, distance) {
     var text = "";
     for (j = 0; j < arr_main.length; j++) {
         var jarak = arr_main[j].split(";");
-        var jarak_int = parseInt(jarak[2]);
+        var jarak_int = parseInt(jarak[4]);
         if (res < jarak_int) break;
         else {
-          text += arr_main[j] + "-";
+          text += arr_main[j] + "/";
         }
     }
-    text += (kode + ";" + nama + ";" + res + "-");
+    text += (kode + ";" + nama + ";" + central_temp + ";" +  res + "/");
     for (var k = j; k<arr_main.length; k++) {
-       text += arr_main[k] + "-";
+       text += arr_main[k] + "/";
     }
     distance = text;
     return distance;
   }
 }
 
-function list_place(index, place) {
+function list_place(index, place, central) {
   
   //alert(place);
   var text_seribu = "";
   var text_tigaribu = "";
   var text_limaribu = "";
   var sem = "";
-  var arr_list = place.split("-");
+  var arr_list = place.split("/");
   for (var i = 0; i<arr_list.length; i++) {
       var temp = arr_list[i].split(";");
-      if (parseInt(temp[2]) <= 1000) {
-          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</br>";
-          text_seribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + temp[1] + '\')">Back</button><br/></li>';
+	  var coordinate = temp[2] + ";" + temp[3] + ";" + central;
+      if (parseInt(temp[4]) <= 1000) {
+		
+          text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
+          text_seribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
-      else if (parseInt(temp[2]) > 1000 && parseInt(temp[2]) <= 3000) {
-          text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
+      else if (parseInt(temp[4]) > 1000 && parseInt(temp[4]) <= 3000) {
+          text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
+		  text_tigaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
-      else if (parseInt(temp[2]) > 3000 && parseInt(temp[2]) <= 5000) {
-          text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[2]) +" meter</li>";
+      else if (parseInt(temp[4]) > 3000 && parseInt(temp[4]) <= 5000) {
+          text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
+		  text_limaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
   }
   /*alert(text_seribu);
@@ -474,7 +480,7 @@ function list_place(index, place) {
   }
 }
 
-function getDistance(place) {
-  alert(place);
+function getDistance(coordinate) {
+  alert(coordinate);
 }
 
