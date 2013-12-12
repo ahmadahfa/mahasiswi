@@ -91,7 +91,7 @@ function windowLayer(index, e, infoWindow, map)
 
 function passing(kode) 
 {
-    alert("masuk");
+    //alert("masuk");
   document.getElementById("main_map").style.display = "none";
   document.getElementById("detail").style.display = "block";    
   document.getElementById("map_custom").style.display = "block";      
@@ -104,7 +104,7 @@ function passing(kode)
   document.getElementById("wis").disabled = false;
   document.getElementById("rest").disabled = false;
   document.getElementById("all").disabled = false;
-  alert(kode);
+  //alert(kode);
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
   var URLwhere = " where Kode IN '" + kode + "'";
@@ -582,8 +582,13 @@ function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
         totalTime += myroute.legs[i].duration.value;      
       }
       totalDist = totalDist / 1000 ;
+	  var menit, detik;
+	  menit = Math.round(totalTime/60)-1;
+	  detik = totalTime % 60;
      //alert(totalDist);
-	document.getElementById('route-result').innerHTML = "<br>Total Jarak &nbsp; &nbsp; &nbsp; &nbsp; "+totalDist+" </br> <br>Estimasi Waktu Tempuh "+totalTime+"</br>";
+	 //alert(totalTime);
+	document.getElementById('routeTime').innerHTML = menit + " m "+ detik + " s";
+	document.getElementById('routeDistance').innerHTML = totalDist + " km";
         
   var URLHead1 = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable1 = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
@@ -592,11 +597,9 @@ function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
   var query1 = URLHead1+ URLTable1 + URLwhere1 + URLkey1;
   //alert(query1);
   $.get(query1, function (data) {
-  
     var nama1 = data.rows[0][3];
-	
-	document.getElementById('route-result').innerHTML +="<br> Nama tempat Awal :"+nama1 +"</br>"+ "<br>alamat Awal :" +alamat1+"   </br>"
-  },'json');
+	document.getElementById('origin').innerHTML =nama1},'json'); 
+	document.getElementById('oriAddress').innerHTML =alamat1; 
   
    var URLHead2 = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable2 = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
@@ -605,12 +608,8 @@ function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
   var query2 = URLHead2+ URLTable2 + URLwhere2 + URLkey2;
  // alert(query2);
   $.get(query2, function (data) {
-    
     var nama2 = data.rows[0][3];
-	
-	document.getElementById('route-result').innerHTML +="<br> Nama tempat Akhir :"+nama2 +"</br>"+ "<br>alamat Akhir :" +alamat2+"   </br>"
-  },'json');
-  
-  
+	document.getElementById('destination').innerHTML =nama2},'json');
+	document.getElementById('destAddress').innerHTML =alamat2;  
 	 
 }

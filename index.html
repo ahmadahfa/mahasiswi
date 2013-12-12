@@ -7,6 +7,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="css/my-style.css" rel="stylesheet">
+	<link rel="SHORTCUT ICON" HREF="favicon/favicon.ico">
   </head>
   <body onload = "ambil_peta()">
   <!-- rizal -->
@@ -149,11 +150,17 @@
 					<button type="button" class="btn btn-success" data-toggle="button" style = "float:right;" onclick = "ambil_peta()">Back</button><br />
 				</div>
 				<div class = "span4" id = "map_route" style = "display:none;">
-					<div class = "route-result">
-						<p>Rute dari ... ke ... adalah sebagai berikut</p> 	
-						
+					<div class = "route-result well well-lg">
+						<span class="label A">A</span>&nbsp;&nbsp;<a id="origin"></a>
+						<p id = "oriAddress"></p>
+						<p style="text-align:center;">menuju</p>
+						<span class="label B">B</span>&nbsp;&nbsp;<a id="destination"></a>
+						<p id = "destAddress"></p>
+						<hr />
+						Estimasi Waktu Berjalan	: <p id = "routeTime"></p>
+						Estimasi Jarak: <p id = "routeDistance"></p>
 					</div>
-					<button type="button" class="btn btn-success" data-toggle="button" id = "back_route">Back</button><br />							
+					<button type="button" class="btn btn-success" data-toggle="button" style = "float:right;" id = "back_route">Back</button><br />							
 				</div>
 				<div class = "span8" id = "detail-googft-mapCanvas">
 				</div>
