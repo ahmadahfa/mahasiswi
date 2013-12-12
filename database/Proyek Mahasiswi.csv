@@ -1,0 +1,137 @@
+Kode,Tipe,iconName,Nama,Alamat,Latitude,Longitude,Deskripsi
+STA_1_JT,stasiun,rail,Stasiun Kereta Api Buaran,Jakarta Timur,-6.216108,106.928188,Stasiun ini terletak pada jalur KA Commuter Jabodetabek jalur Bekasi yang dimulai dari Stasiun Jatinegara hingga Stasiun Bekasi.
+STA_2_JT,stasiun,rail,Stasiun Kereta Api Cakung,Jakarta Timur,-6.21918,106.952558,Stasiun Cakung terletak di jalur KA Commuter Jabodetabek jalur Bekasi yang dimulai dari Stasiun Jatinegara hingga Stasiun Bekasi.
+STA_3_JT,stasiun,rail,Stasiun Cipinang,Jakarta Timur,-6.2143352,106.884436,Stasiun Cipinang terletak pada jalur KA Commuter Jabodetabek jalur Bekasi yang dimulai dari Stasiun Jatinegara hingga Stasiun Bekasi.
+STA_4_JT,stasiun,rail,Stasiun Kereta Api Cawang,Jakarta Timur,-6.243079,106.858627,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_5_JT,stasiun,rail,Stasiun Jatinegara,Jakarta Timur,-6.215119,106.8703,sebuah stasiun kereta api di Jatinegara  Jakarta Timur. Stasiun ini merupakan stasiun bertemunya tiga jalur  yaitu jalur ke Pasar Senen  jalur ke Manggarai  dan jalur ke Bekasi.
+STA_6_JT,stasiun,rail,Stasiun Kereta Api Klender,Jakarta Timur,-6.213311,106.89981,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_7_JT,stasiun,rail,Stasiun Kereta Api Klender Baru,Jakarta Timur,-6.217602,106.940116,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_8_JT,stasiun,rail,Stasiun Kereta Api Pondok Jati,Jakarta Timur,-6.205021,106.861057,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_9_JB,stasiun,rail,Stasiun Kereta Api Angke,Jakarta Barat,-6.1442937,106.8006706,Stasiun Angke (AK) merupakan stasiun kereta api yang terletak di Jl. Stasiun Angke  perbatasan antara kelurahan Jembatan Lima danAngke  Tambora  Jakarta Barat. Stasiun ini berada di Daerah Operasi I Jakarta.
+STA_10_JB,stasiun,rail,Stasiun Kereta Api Duri,Jakarta Barat,-6.155918,106.80133,Stasiun ini berada di daerah kumuh karena banyak gubuk liar yang berdiri di sekitar jalur kereta api  sehingga dianggap menganggu perjalanan kereta api yang melintas.
+STA_11_JB,stasiun,rail,Stasiun Kereta Api Sawah Besar,Jakarta Barat,-6.155918,106.80133,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_12_JB,stasiun,rail,Stasiun Kereta Api Kalideres,Jakarta Barat,-6.15459,106.70591,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_13_JB,stasiun,rail,Stasiun Kereta Api Kota,Jakarta Barat,-6.13752,106.814682,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_14_JB,stasiun,rail,Stasiun Kereta Api Pesing,Jakarta Barat,-6.16106,106.77233,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_15_JB,stasiun,rail,Stasiun Kereta Api Mangga Besar,Jakarta Barat,-6.149785,106.826996,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_16_JS,stasiun,rail,Stasiun Kereta Api Duren Kalibata,Jakarta Selatan,-6.2549,106.85521,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_17_JS,stasiun,rail,Stasiun Kereta Api Tanjung Barat,Jakarta Selatan,-6.30798,106.83886,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_18_JS,stasiun,rail,Stasiun Kereta Api Tebet,Jakarta Selatan,-6.22604,106.85826,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_19_JS,stasiun,rail,Stasiun Kereta Api Manggarai,Jakarta Selatan,-6.210426,106.84995,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_20_JS,stasiun,rail,Stasiun Kereta Api Kebayoran,Jakarta Selatan,-6.23717,106.78251,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_21_JS,stasiun,rail,Stasiun Kereta Api Lenteng Agung,Jakarta Selatan,-6.33129,106.83483,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_22_JS,stasiun,rail,Stasiun Kereta Api Pasar Minggu,Jakarta Selatan,-6.28326,106.84459,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_23_JS,stasiun,rail,Stasiun Kereta Api Pasar Minggu Baru,Jakarta Selatan,-6.26313,106.85154,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_24_JS,stasiun,rail,Stasiun Kereta Api Universitas Pancasila,Jakarta Selatan,-6.339275,106.834222,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_25_JP,stasiun,rail,Stasiun Kereta Api Gambir,Jakarta Pusat,-6.17676,106.83049,Stasiun ini terletak di jalur KA Commuter Jabodetabek dan Kereta Api Jarak Jauh
+STA_26_JP,stasiun,rail,Stasiun Kereta Api Gondangdia,Jakarta Pusat,-6.18586,106.83265,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_27_JP,stasiun,rail,Stasiun Kereta Api Cikini,Jakarta Pusat,-6.19845,106.84118,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_28_JP,stasiun,rail,Stasiun Kereta Api Jayakarta,Jakarta Pusat,-6.1414,106.82341,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_29_JP,stasiun,rail,Stasiun Kereta Api Juanda,Jakarta Pusat,-6.16619,106.83044,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_30_JP,stasiun,rail,Stasiun Kereta Api Sudirman  Dukuh Atas,Jakarta Pusat,-6.20241,106.8235,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_31_JP,stasiun,rail,Stasiun Kereta Api Tanah Abang,Jakarta Pusat,-6.18547,106.81081,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_32_JP,stasiun,rail,Stasiun Kereta Api Karet,Jakarta Pusat,-6.20089,106.81653,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_33_JP,stasiun,rail,Stasiun Kereta Api Kemayoran,Jakarta Pusat,-6.16203,106.84152,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_34_JP,stasiun,rail,Stasiun Kereta Api Kramat,Jakarta Pusat,-6.19371,106.85685,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_35_JP,stasiun,rail,Stasiun Kereta Api Palmerah,Jakarta Pusat,-6.20698,106.79756,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_36_JP,stasiun,rail,Stasiun Pasar Senen,Jakarta Pusat,-6.17419,106.84446,Terletak di wilayah ramai di dekat Gelanggang Remaja Planet Senen dan pusat perbelanjaan Pasar Senen  stasiun ini terutama melayani kereta api kelas bisnis dan kelas ekonomi tujuan Purwokerto  Kutoarjo Yogyakarta  Semarang  Solo  dan Surabaya.
+STA_37_JP,stasiun,rail,Stasiun Kereta Api Rajawali,Jakarta Pusat,-6.14568,106.83705,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_38_JU,stasiun,rail,Stasiun Kereta Api Ancol,Jakarta Utara,-6.1272,106.8448,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_39_JU,stasiun,rail,Stasiun Kereta Api Tanjung Priok,Jakarta Utara,-6.11092,106.88073,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+STA_40_JU,stasiun,rail,Stasiun Kereta Api Kampung Bandan,Jakarta Utara,-6.13291,106.82842,Stasiun ini terletak di jalur KA Commuter Jabodetabek
+TER_1_JT,terminal,bus,Terminal Pulogadung,Jakarta Timur,-6.18367,106.90811,Terminal Terpadu Pulo Gadung adalah terminal bus yang berada di Jalan Perintis Kemerdekaan dan Jalan Bekasi Raya dan berada di kawasan Pulo Gadung  Jakarta Timur. Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_2_JT,terminal,bus,Terminal Kampung Rambutan,Jakarta Timur,-6.30948,106.8821,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_3_JT,terminal,bus,Terminal Kampung Melayu,Jakarta Timur,-6.22476,106.86683,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_4_JT,terminal,bus,Terminal Rawamangun,Jakarta Timur,-6.19763,106.89089,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_5_JT,terminal,bus,Terminal Pulogebang,Jakarta Timur,-6.21924,106.95667,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_6_JT,terminal,bus,Terminal Cililitan,Jakarta Timur,-6.2632,106.86641,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_7_JT,terminal,bus,Terminal Pinang Ranti,Jakarta Timur,-6.290161,106.881174,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_8_JS,terminal,bus,Terminal Blok M,Jakarta Selatan,-6.24344,106.80218,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_9_JS,terminal,bus,Terminal Manggarai,Jakarta Selatan,-6.211962,106.844396,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_10_JS,terminal,bus,Terminal Lebak Bulus,Jakarta Selatan,-6.28944,106.77399,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_11_JS,terminal,bus,Terminal Pasar Minggu,Jakarta Selatan,-6.28527,106.84387,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_12_JB,terminal,bus,Terminal Kalideres,Jakarta Barat,-6.154497,106.708754,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_13_JB,terminal,bus,Terminal Grogol,Jakarta Barat,-6.166406,106.790349,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_14_JP,terminal,bus,Terminal Senen,Jakarta Pusat,-6.17343,106.84201,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_15_JP,terminal,bus,Terminal Tanah Abang,Jakarta Pusat,-6.188438,106.813542,Di sini terdapat pangkalan Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+TER_16_JU,terminal,bus,Terminal Tanjung Priok,Jakarta Utara,-6.109611,106.881362,Di sini terdapat pangkalan Bus AKAP  Metromini  Angkot  dan Mikrolet. Angkutan umum Jakarta
+WIS_1_JP,wisata,museum,MASJID ISTIQLAL,Jakarta Pusat,-6.170166,106.831376,Masjid Istiqlal adalah masjid negara Republik Indonesia yang terletak di pusat ibukota Jakarta. Masjid Istiqlal merupakan masjid terbesar di Asia Tenggara.
+WIS_2_JP,wisata,museum,MONUMEN NASIONAL (MONAS),Jakarta Pusat,-6.175396,106.827103,Monumen Nasional atau yang populer disingkat dengan Monas atau Tugu Monas adalah monumen peringatan setinggi 132 meter (433 kaki) yang didirikan untuk mengenang perlawanan dan perjuangan rakyat Indonesia untuk merebut kemerdekaan dari pemerintahan kolonia
+WIS_3_JP,wisata,museum,TAMAN ISMAIL MARZUKI (TIM),Jakarta Pusat,-6.189006,106.838151,Pusat Kesenian Jakarta Taman Ismail Marzuki yang populer disebut Taman Ismail Marzuki (TIM) merupakan sebuah pusat kesenian dan kebudayaan yang berlokasi di jalan Cikini Raya 73  Jakarta Pusat. Di sini terletak Institut Kesenian Jakarta dan Planetarium Ja
+WIS_4_JP,wisata,museum,GELANGGANG OLAH RAGA BUNG KARNO,Jakarta Pusat,-6.21827,106.8018,Stadion Utama Gelora Bung Karno adalah sebuah stadion serbaguna di Jakarta  Indonesia yang merupakan bagian dari kompleks olahragaGelanggang Olahraga Bung Karno. Stadion ini umumnya digunakan sebagai arena pertandingan sepak bola tingkat internasional.
+WIS_5_JS,wisata,museum,KEBUN BINATANG RAGUNAN,Jakarta Selatan,-6.30929,106.82037,Kebun Binatang Ragunan adalah sebuah kebun binatang yang terletak di daerah Ragunan  Pasar Minggu  Jakarta Selatan  Indonesia. Kebun binatang seluas 140 hektar ini didirikan pada tahun 1864. Di dalamnya  terdapat berbagai koleksi yang terdiri dari 295 spe
+WIS_6_JS,wisata,museum,TAMAN MINI INDONESIA INDAH,Jakarta Selatan,-6.30221,106.89516,Taman ini merupakan rangkuman kebudayaan bangsa Indonesia  yang mencakup berbagai aspek kehidupan sehari-hari masyarakat 26 provinsi Indonesia (pada tahun 1975) yang ditampilkan dalam anjungan daerah berarsitektur tradisional  seta menampilkan aneka busan
+WIS_7_JT,wisata,museum,SITU PEDONGKELAN,Jakarta Timur,-6.3497,106.85656,Wisata danau dan pemancingan di perbatasan Jakarta dengan Depok.
+WIS_8_JU,wisata,museum,Taman Impian Jaya Ancol,Jakarta Utara,-6.12353,106.83187,Taman Impian Jaya Ancol merupakan sebuah objek wisata di Jakarta Utara. Sebagai komunitas pembaharuan kehidupan masyarakat yang menjadi kebanggaan bangsa.
+WIS_9_JB,wisata,museum,Museum Wayang,Jakarta Barat,-6.13488,106.81271,Museum Wayang memamerkan berbagai jenis dan bentuk wayang dari seluruh Indonesia  baik yang terbuat dari kayu dan kulit maupun bahan-bahan lain. Wayang-wayang dari luar negeri ada juga di sini  misalnya dari Republik Rakyat Cina dan Kamboja. Hingga kini M
+WIS_10_JB,wisata,museum,Museum Sejarah Jakarta,Jakarta Barat,-6.13507,106.81328,Museum Fatahillah yang juga dikenal sebagai Museum Sejarah Jakarta atau Museum Batavia adalah sebuah museum yang terletak di Jalan Taman Fatahillah No. 2  Jakarta Barat dengan luas lebih dari 1.300 meter persegi.
+WIS_11_JU,wisata,museum,Museum Bahari,Jakarta Utara,-6.12671,106.80837,Museum Bahari adalah museum yang menyimpan koleksi yang berhubungan dengan kebaharian dan kenelayanan bangsa Indonesia dari Sabanghingga Merauke yang berlokasi di seberang
+WIS_12_JB,wisata,museum,Museum Seni Rupa dan Keramik,Jakarta Barat,-6.13389,106.81352,Museum Seni Rupa dan Keramik terletak di Jalan Pos Kota No 2  Kotamadya Jakarta Barat  Provinsi DKI Jakarta  Indonesia. Museum yang tepatnya berada di seberang Museum Sejarah Jakarta itu memajang keramik lokal dari berbagai daerah di Tanah Air  dari era K
+WIS_13_JS,wisata,museum,Situ Babakan,Jakarta Selatan,-6.34172,106.82384,Masyarakat di wilayah ini mengembangkan usaha pertanian dan perikanan sekaligus membnatu dalam usaha penghijauan wilayah Situ Babakan. Selain itu di daerah ini dapat disaksikan pula keseharian masyarakat setempat seperti budidaya ikan dalam keramba yang t
+WIS_14_JU,wisata,museum,DUNIA FANTASI,Jakarta Utara,-6.123455,106.831859,Dunia Fantasi atau disebut juga Dufan (juga disebut Do Fun) yang diresmikan pada 29 Agustus 1985 adalah tempat hiburan yang terletak di kompleks Taman Impian Jaya Ancol (Ancol taman impian)  Jakarta Utara  Indonesia.
+HOT_1_JS,hotel,rec_lodging,Arion Swiss-Bel Kemang Jakarta,Jakarta Selatan,-6.25615,106.81489,It features a total of 94 elegantly appointed rooms. Each room is equipped with individual controlled air-conditioning  IDD telephone  broadband internet access  mini bar  safe deposit box that can fit a laptop  tea and coffee making facilities
+HOT_2_JP,hotel,rec_lodging,Aryaduta,Jakarta Pusat,-6.180974,106.837701,Hotel Aryaduta is Indonesia's premier and leading hospitality group with a tradition of luxury  comfort  and style since 1974. Located in Indonesia's premier cities and preferred resort destinations  each hotel and resort provides an outstanding experienc
+HOT_3_JS,hotel,rec_lodging,Aston At Kuningan Suites,Jakarta Selatan,-6.207189,106.827415,This elegant and sophisticated boutique style property includes service apartments at an affordable rate. Filled with four star comforts  Aston at Kuningan Suites offers cable TV  kitchenette  spacious balconies with beautiful views  air conditioned apart
+HOT_4_JU,hotel,rec_lodging,Aston Marina,Jakarta Utara,-6.12912,106.82948,Aston Marina yang berada dekat kawasan Ancol dan pusat-pusat perbelanjaan ini tepat untuk Anda yang akan berlibur di Jakarta bersama keluarga.
+HOT_5_JU,hotel,rec_lodging,Aston Pluit  & Residence,Jakarta Utara,-6.124415,106.795086,The superb Aston Pluit is ideally located in the heart of Pluit and just 20 minutes from the international airport allowing easy access to all the main attractions in Jakarta for shopping and entertainment. The hotel offers rooms and suites with excellent
+HOT_6_JP,hotel,rec_lodging,Borobudur  Jakarta,Jakarta Pusat,-6.205053,106.760705,Spanning across 23 acres of tropical gardens  695 rooms with extensive recreational facilities  Hotel Borobudur Jakarta is truly a five-star. Located in central Jakarta  close to business districts  shopping malls and government offices  the hotel is abou
+HOT_7_JT,hotel,rec_lodging,Desa Wisata TMII,Jakarta Timur,-6.305128,106.900781,Desa Wisata memiliki 55 kamar dengan beragam pilihan mulai dari Superior Twin & Double  Cottages  hingga Pondokan yang cocok bagi pelajar & mahasiswa atau rombongan dengan daya tampung keseluruhan mencapai + 450 tamu dengan harga yang terjangkau. Bagi pen
+HOT_8_JU,hotel,rec_lodging,D'Prima,Jakarta Utara,-6.133986,106.831926,Semua kamar di d?primahotel termasuk tempat menginap yang nyaman untuk menikmati TV plasma 32?  internet Wi-Fi gratis di seluruh bagian hotel  Safety Deposit Box untuk mengamankan barang-barang berharga Anda  air mineral botol gratis  kopi  teh
+HOT_9_JP,hotel,rec_lodging,Ibis Budget Jakarta,Jakarta Pusat,-6.192174,106.83901,Golden Triangle area  Gambir Train Station and Indonesia University. Featuring 150 rooms with a choice of either one queen bed or a queen and a single  ibis budget Jakarta Cikini is located on one of the most vibrant streets in central Jakarta  and offer
+HOT_10_JB,hotel,rec_lodging,Fortuna,Jakarta Barat,-6.14148,106.813652,Fortuna Hotel merupakan Hotel Murah di wilayah jakarta Barat  dengan lokasi strategis hotel ini menawarkan harga ekomomis untuk anda
+HOT_11_JS,hotel,rec_lodging,Gran Melia  Jakarta,Jakarta Selatan,-6.234171,106.83121,Stunning architecture  a passionate commitment to outstanding service and completely rejuvenated facilities combine to make this iconic luxury international five star hotel the true benchmark for 21st century luxury in down town Jakarta Indonesia.
+HOT_12_JP,hotel,rec_lodging,Grand Hyatt Jakarta,Jakarta Pusat,-6.193846,106.822219,Grand Hyatt Jakarta is a 5 star luxury hotel located in the heart of Jakarta business district. Our Jakarta hotel is adjacent to Indonesia's most comprehensive and sophisticated shopping mall  Plaza Indonesia  and enjoys convenient access to government of
+HOT_13_JS,hotel,rec_lodging,Grand Kemang  Jakarta,Jakarta Selatan,-6.265955,106.820781,grandkemang hotel Jakarta welcomes you in an atmosphere that embraces individuality in every sense.
+HOT_14_JS,hotel,rec_lodging,Grand Mahakam Jakarta,Jakarta Selatan,-6.318391,106.884833,Hotel Gran Mahakam is a five-star boutique hotel in Jakarta Selatan with distinctly European architecture  beautifully appointed rooms  attentive and friendly service.
+HOT_15_JS,hotel,rec_lodging,Harris Tebet  Jakarta,Jakarta Selatan,-6.22273,106.84744,Hotel Bintang 4
+HOT_16_JU,hotel,rec_lodging,Horison Jakarta,Jakarta Utara,-6.1207,106.838533,Indonesia's fastest growing chain of mid to up scales Business and Leisure
+HOT_17_JP,hotel,rec_lodging,Indonesia Kempinski,Jakarta Pusat,-6.195478,106.822232,Hotel Bintang 5
+HOT_18_JB,hotel,rec_lodging,Jatra,Jakarta Barat,-6.136432,106.804018,Hotel Bintang 3
+HOT_19_JS,hotel,rec_lodging,JW Marriott  Jakarta,Jakarta Selatan,-6.22732,106.82689,Hotell Bintang 5
+HOT_20_JP,hotel,rec_lodging,Nikko Jakarta,Jakarta Pusat,-6.193515,106.823659,Hotell Bintang 2
+HOT_21_JB,hotel,rec_lodging,Pancoran Jaya,Jakarta Barat,-6.141259,106.814068,Hotell Bintang 3
+HOT_22_JU,hotel,rec_lodging,Putri Duyung Ancol,Jakarta Utara,-6.12156,106.840426,Hotel Indah di tepi pantai
+HOT_23_JU,hotel,rec_lodging,Raddin Ancol,Jakarta Utara,-6.12167,106.842057,292 nicely decorated and comfortable rooms makes  Raddin Ancol one of Jakarta's favourite weekend retreats and the ideal family resort  in Jakarta.
+HOT_24_JB,hotel,rec_lodging,Santika Premiere Jakarta,Jakarta Barat,-6.19794,106.80257,Hotel Bintang 3
+HOT_25_JB,hotel,rec_lodging,The Batavia,Jakarta Barat,-6.13192,106.81032,Hotel Bintang 3
+HOT_26_JS,hotel,rec_lodging,The Ritz-Carlton Jakarta Pacific Place,Jakarta Selatan,-6.223833,106.810042,Hotel Bintang 3
+HOT_27_JT,hotel,rec_lodging,Makassar Mulia,Jakarta Timur,-6.33851,106.84194,Hotel Bintang 3
+HOT_28_JP,hotel,rec_lodging,Bintang Kejora,Jakarta Pusat,-6.182502,106.827323,Hotel Bintang 3
+HOT_29_JP,hotel,rec_lodging,Banyuwangi Sintara,Jakarta Pusat,-6.161793,106.831285,Hotel Bintang 3
+HOT_30_JP,hotel,rec_lodging,Mataram,Jakarta Pusat,-6.160806,106.820368,Hotel Bintang 3
+HOT_31_JU,hotel,rec_lodging,Mitra Bahari,Jakarta Utara,-6.127522,106.808001,Hotel Bintang 3
+HOT_32_JU,hotel,rec_lodging,Favehotel Pluit Junction,Jakarta Utara,-6.126404,106.791272,Hotel Bintang 3
+HOT_33_JP,hotel,rec_lodging,Le Meridien,Jakarta Pusat,-6.213346,106.818724,Hotel Bintang 3
+HOT_34_JP,hotel,rec_lodging,Intercontinental,Jakarta Pusat,-6.208928,106.819357,InterContinental luxury hotels and resorts in the best destinations for leisure or business. Make your next trip memorable.
+HOT_35_JS,hotel,rec_lodging,R Residence,Jakarta Selatan,-6.3018,106.7932,R Residence terletak di Daerah Cilandak Barat di Jakarta Selatan  dapat dicapai dalam waktu 45 menit berkendara dari Bandara Internasional Soekarno Hatta.
+HOT_36_JS,hotel,rec_lodging,Bukit Indah,Jakarta Selatan,-6.29447,106.78599,Hotel Bintang 3
+HOT_37_JS,hotel,rec_lodging,Pondok Club Vila,Jakarta Selatan,-6.29378,106.78499,Penginapan dengan suasana yang nyaman.
+HOT_38_JS,hotel,rec_lodging,Hill Side Grand Puri,Jakarta Selatan,-6.3113,106.80377,Hotel Bintang 3
+RES_1_JU,restoran,dining,Pizza Hut,Jakarta Utara,-6.12468,106.84706,Pizza Center a la Italia
+RES_2_JU,restoran,dining,Sunda Kelapa Restaurant,Jakarta Utara,-6.12265,106.81257,Menyajikan aneka masakan khas Jakarta
+RES_3_JU,restoran,dining,Warnas Khas Sunda E'heti,Jakarta Utara,-6.1268,106.85863,Masakan Sunda
+RES_4_JU,restoran,dining,Bandar Djakarta,Jakarta Utara,-6.12275,106.843776,Restoran Bandar Djakarta dengan konsep garden view yang menyediakan lebih banyak lesehan sehingga para pengunjung dapat bersantai dan nyaman.
+RES_5_JU,restoran,dining,Segarra Seaside Escape,Jakarta Utara,-6.11598,106.85884,Sebuah restoran yang terletak di pantai Carnaval Ancol Jakarta Baycity  Segarra lebih indah dengan pemandangan laut
+RES_6_JU,restoran,dining,Le Bridge,Jakarta Utara,-6.12393,106.84307,Le Bridge yang terletak di Taman Impian Jaya Ancol terlihat sebagai resto yang mewah  sampai suatu saat kita mencobanya karena rasa penasaran
+RES_7_JU,restoran,dining,Rumah Makan Iyo Bana Kapau,Jakarta Utara,-6.133928,106.8328,Masakan Padang
+RES_8_JU,restoran,dining,Crapoe,Jakarta Utara,-6.13353,106.832361,Masakan Perancis
+RES_9_JU,restoran,dining,Rasane Seafood & Ikan Bakar,Jakarta Utara,-6.1219,106.84545,Seafood Center
+RES_10_JB,restoran,dining,Rumah Makan Senang Hati,Jakarta Barat,-6.139189,106.812552,Rumah Makan
+RES_11_JB,restoran,dining,Rumah Makan Panggang Ayam Malang,Jakarta Barat,-6.1398,106.81521,Rumah Makan
+RES_12_JB,restoran,dining,Warung Pempek Palembang,Jakarta Barat,-6.140725,106.811635,Rumah Makan
+RES_13_JB,restoran,dining,Kedai Nasi Aneka Sari,Jakarta Barat,-6.139205,106.810106.,Rumah Makan
+RES_14_JB,restoran,dining,Warteg Bahari,Jakarta Barat,-6.134461,106.810833,Rumah Makan
+RES_15_JB,restoran,dining,Bakmi Hokkian,Jakarta Barat,-6.160097,106.819531,Rumah Makan
+RES_16_JU,restoran,dining,I-Tasuki,Jakarta Utara,-6.122879,106.791409,Rumah Makan
+RES_17_JU,restoran,dining,Sate Pluit,Jakarta Utara,-6.122415,106.790041,Rumah Makan
+RES_18_JU,restoran,dining,Sovia Minang,Jakarta Utara,-6.128111,106.792621,Rumah Makan
+RES_19_JB,restoran,dining,Ampera,Jakarta Barat,-6.162894,106.76633,Rumah Makan
+RES_20_JB,restoran,dining,Warteg Sariwat,Jakarta Barat,-6.161758,106.766998,Rumah Makan
+RES_21_JP,restoran,dining,Tiga Puluh,Jakarta Pusat,-6.213085,106.818764,Rumah Makan
+RES_22_JP,restoran,dining,Bakmi 88,Jakarta Pusat,-6.211394,106.817442,Rumah Makan
+RES_23_JP,restoran,dining,Java Bean,Jakarta Pusat,-6.210573,106.818394,Rumah Makan
+RES_24_JS,restoran,dining,Soul'Id,Jakarta Selatan,-6.296597,106.790092,Rumah Makan
+RES_25_JS,restoran,dining,Gule Kepala Ikan Mas,Jakarta Selatan,-6.296653,106.793077,Rumah Makan
+RES_26_JS,restoran,dining,Bakmi Jogja,Jakarta Selatan,-6.296415,106.793281,Rumah Makan
+RES_27_JS,restoran,dining,Warung Mie Ayam,Jakarta Selatan,-6.130847,106.84166,Rumah Makan
+RES_28_JS,restoran,dining,Bebek Kuali,Jakarta Selatan,-6.229248,106.893102,Rumah Makan
