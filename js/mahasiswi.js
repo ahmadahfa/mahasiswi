@@ -91,7 +91,7 @@ function windowLayer(index, e, infoWindow, map)
 
 function passing(kode) 
 {
-
+    alert("masuk");
   document.getElementById("main_map").style.display = "none";
   document.getElementById("detail").style.display = "block";    
   document.getElementById("map_custom").style.display = "block";      
@@ -104,7 +104,7 @@ function passing(kode)
   document.getElementById("wis").disabled = false;
   document.getElementById("rest").disabled = false;
   document.getElementById("all").disabled = false;
-
+  alert(kode);
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
   var URLwhere = " where Kode IN '" + kode + "'";
@@ -112,23 +112,30 @@ function passing(kode)
   var query = URLHead + URLTable + URLwhere + URLkey;
   
   $.get(query, function (data) {
+   
     var kode = data.rows[0][0];
+   
     var nama = data.rows[0][3];
-    var global_latitude = data.rows[0][5];
-    var global_longitude = data.rows[0][6];
     
+    var global_latitude = data.rows[0][5];
+   
+    var global_longitude = data.rows[0][6];
+    //alert(kode + " " + nama + " " + global_latitude + " "+ global_longitude);
     document.getElementById("term").onchange = function() {detail(0, kode, nama, global_latitude, global_longitude);};
     document.getElementById("sta").onchange = function() {detail(1, kode, nama, global_latitude, global_longitude);};
     document.getElementById("hot").onchange = function() {detail(2, kode, nama, global_latitude, global_longitude);};
     document.getElementById("rest").onchange = function() {detail(3, kode, nama, global_latitude, global_longitude);};
     document.getElementById("wis").onchange = function() {detail(4, kode, nama, global_latitude, global_longitude);};
     document.getElementById("all").onchange = function() {detail(5, kode, nama, global_latitude, global_longitude);};
+    //alert("cantik 3");
     detail(5, kode, nama, global_latitude, global_longitude);
-  }); 
+    //alert("cantik 4");
+  }, 'json'); 
 }
 
 function detail(index, kode, nama, lat, lon)
 {
+    //alert(index + " " + kode + " " + nama);
     var sum = "";
     if (index == 0) sum = "Tipe IN 'terminal'";
     else if (index == 1) sum = "Tipe IN 'stasiun'";
@@ -324,7 +331,7 @@ function get_around_place(kode, nama, lat, lon) {
       list_place(2, kode, hotel, central);
       list_place(3, kode, wisata, central);
       list_place(4, kode, rumah_makan, central);
-   }); 
+   },'json'); 
   
 }
 
@@ -589,7 +596,7 @@ function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
     var nama1 = data.rows[0][3];
 	
 	document.getElementById('route-result').innerHTML +="<br> Nama tempat Awal :"+nama1 +"</br>"+ "<br>alamat Awal :" +alamat1+"   </br>"
-  });
+  },'json');
   
    var URLHead2 = "https://www.googleapis.com/fusiontables/v1/query?sql=";
   var URLTable2 = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
@@ -602,7 +609,7 @@ function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
     var nama2 = data.rows[0][3];
 	
 	document.getElementById('route-result').innerHTML +="<br> Nama tempat Akhir :"+nama2 +"</br>"+ "<br>alamat Akhir :" +alamat2+"   </br>"
-  });
+  },'json');
   
   
 	 
