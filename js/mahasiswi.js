@@ -37,8 +37,8 @@ function ambil_peta() {
       suppressInfoWindows: true,
       /*heatmap: { enabled: false },*/
       query: {
-        select: "col2",
-        from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
+        select: "col5",
+        from: "1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0",
         where: "Tipe = 'wisata'"
       },
       options: {
@@ -106,16 +106,16 @@ function passing(kode)
   document.getElementById("all").disabled = false;
 
   var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
-  var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
+  var URLTable = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
   var URLwhere = " where Kode IN '" + kode + "'";
   var URLkey = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
   var query = URLHead + URLTable + URLwhere + URLkey;
   
   $.get(query, function (data) {
     var kode = data.rows[0][0];
-    var nama = data.rows[0][2];
-    var global_latitude = data.rows[0][4];
-    var global_longitude = data.rows[0][5];
+    var nama = data.rows[0][3];
+    var global_latitude = data.rows[0][5];
+    var global_longitude = data.rows[0][6];
     
     document.getElementById("term").onchange = function() {detail(0, kode, nama, global_latitude, global_longitude);};
     document.getElementById("sta").onchange = function() {detail(1, kode, nama, global_latitude, global_longitude);};
@@ -198,8 +198,8 @@ function detail(index, kode, nama, lat, lon)
       suppressInfoWindows: true,
       heatmap: { enabled: false },
       query: {
-        select: "col2",
-        from: "1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o",
+        select: "col5",
+        from: "1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0",
         where: sum
       },
       options: {
@@ -246,7 +246,7 @@ function detail_main(kode, nama, lat, lon) {
 
 function get_around_place(kode, nama, lat, lon) {
     var URLHead = "https://www.googleapis.com/fusiontables/v1/query?sql=";
-    var URLTable = "SELECT * FROM+1JCrZd25DtYmrkdfClmh8YKdEvYvtKNEmi36vs7o"; 
+    var URLTable = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
     var URLwhere = " where Kode NOT EQUAL TO '" + kode + "'";
     var URLkey = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
     var query = URLHead + URLTable + URLwhere + URLkey;
@@ -256,9 +256,9 @@ function get_around_place(kode, nama, lat, lon) {
     $.get(query, function (data) {
       for (var i = 0; i < data.rows.length; i++)   {
         var kode2 = data.rows[i][0];
-        var nama2 = data.rows[i][2];
-        var lat2 = data.rows[i][4];
-        var lon2 = data.rows[i][5];  
+        var nama2 = data.rows[i][3];
+        var lat2 = data.rows[i][5];
+        var lon2 = data.rows[i][6];  
         //alert(lat + " " + lon + " " + lat2 + " " + lon2);
         var koor1 = new google.maps.LatLng(lat, lon);
         var koor2 = new google.maps.LatLng(lat2, lon2);
@@ -364,9 +364,10 @@ function list_place(index, kode, place, central) {
   var text_limaribu = "";
   var sem = "";
   var arr_list = place.split("/");
+  //alert(arr_list);
   for (var i = 0; i<arr_list.length; i++) {
       var temp = arr_list[i].split(";");
-    var coordinate = kode + ";" + temp[2] + ";" + temp[3] + ";" + central;
+    var coordinate = kode + ";" + temp[2] + ";" + temp[3] + ";" + central+";"+temp[0];
       if (parseInt(temp[4]) <= 1000) {
     
           text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
@@ -512,6 +513,7 @@ function getDistance(coordinate) {
   document.getElementById("map_custom").style.display = "none";      
   document.getElementById("map_route").style.display = "block";      
   var sementara = coordinate.split(";");
+  var kodetarget=sementara[5];
   var lonpusat = sementara[4];
   var latpusat = sementara[3];
   var lon_target = sementara[2];
@@ -524,9 +526,9 @@ function getDistance(coordinate) {
   var directionsDisplay = new google.maps.DirectionsRenderer();
   var directionsService = new google.maps.DirectionsService();
   
-  
   var pusat = new google.maps.LatLng(parseFloat(latpusat), parseFloat(lonpusat));
   var target = new google.maps.LatLng(parseFloat(lat_target), parseFloat(lon_target));
+  
 
   var mapDiv = document.getElementById('detail-googft-mapCanvas');
   var map = new google.maps.Map(mapDiv, {
@@ -546,18 +548,25 @@ function getDistance(coordinate) {
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
         var route = response.routes[0];
+        var alamatawal = "";
+        var alamatakhir ="";
         for (var i = 0; i < route.legs.length; i++) {
           //alert(i + " " + route.legs[i]);
+          alamatawal = route.legs[i].start_address + "";
+          alamatakhir=route.legs[i].end_address+"";
         }
-        //computeTotalDistance(response)
+        computeTotalDistance(response,kode_lagi,kodetarget,alamatawal,alamatakhir);
       } else {
         alert("directions response "+status);
       }
   });
   
+ 
+  
+  
 }
 
-function computeTotalDistance(result) {
+function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
       var totalDist = 0;
       var totalTime = 0;
       var myroute = result.routes[0];
@@ -565,6 +574,36 @@ function computeTotalDistance(result) {
         totalDist += myroute.legs[i].distance.value;
         totalTime += myroute.legs[i].duration.value;      
       }
-      totalDist = totalDist / 1000.
-     alert(totalDist);
+      totalDist = totalDist / 1000 ;
+     //alert(totalDist);
+	document.getElementById('route-result').innerHTML = "<br>Total Jarak &nbsp; &nbsp; &nbsp; &nbsp; "+totalDist+" </br> <br>Estimasi Waktu Tempuh "+totalTime+"</br>";
+        
+  var URLHead1 = "https://www.googleapis.com/fusiontables/v1/query?sql=";
+  var URLTable1 = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
+  var URLwhere1 = " where Kode IN '" + kode + "'";
+  var URLkey1 = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
+  var query1 = URLHead1+ URLTable1 + URLwhere1 + URLkey1;
+  //alert(query1);
+  $.get(query1, function (data) {
+  
+    var nama1 = data.rows[0][3];
+	
+	document.getElementById('route-result').innerHTML +="<br> Nama tempat Awal :"+nama1 +"</br>"+ "<br>alamat Awal :" +alamat1+"   </br>"
+  });
+  
+   var URLHead2 = "https://www.googleapis.com/fusiontables/v1/query?sql=";
+  var URLTable2 = "SELECT * FROM+1gF2_vVtpaOIgLRdx4c4kpvS5eFwGuZxQ38Y1AG0"; 
+  var URLwhere2 = " where Kode IN '" + kode2 + "'";
+  var URLkey2 = "&key=AIzaSyBQ6xAt27WIjhDQ6JAbJQtv69DXntsnhO0";
+  var query2 = URLHead2+ URLTable2 + URLwhere2 + URLkey2;
+ // alert(query2);
+  $.get(query2, function (data) {
+    
+    var nama2 = data.rows[0][3];
+	
+	document.getElementById('route-result').innerHTML +="<br> Nama tempat Akhir :"+nama2 +"</br>"+ "<br>alamat Akhir :" +alamat2+"   </br>"
+  });
+  
+  
+	 
 }
