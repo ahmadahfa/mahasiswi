@@ -1,5 +1,6 @@
 #container{
-	margin-top: 3%;
+	margin-top:3%;
+	background: url("img/pattern1.jpg");
 }
 
 #home-menu{
@@ -56,6 +57,7 @@
 
 #googft-mapCanvas {
 	position: absolute;
+	margin: 0 auto;
 }
 
 .radio-select{
