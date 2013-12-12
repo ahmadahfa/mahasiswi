@@ -508,7 +508,7 @@ function getDistance(coordinate) {
   document.getElementById("wis").disabled = true;
   document.getElementById("rest").disabled = true;
   document.getElementById("all").disabled = true;
-
+  document.getElementById('menu').style.display="none";
   document.getElementById("map_custom").style.display = "none";      
   document.getElementById("map_route").style.display = "block";      
   var sementara = coordinate.split(";");
@@ -523,6 +523,7 @@ function getDistance(coordinate) {
   //alert(sementara);
   var directionsDisplay = new google.maps.DirectionsRenderer();
   var directionsService = new google.maps.DirectionsService();
+  
   
   var pusat = new google.maps.LatLng(parseFloat(latpusat), parseFloat(lonpusat));
   var target = new google.maps.LatLng(parseFloat(lat_target), parseFloat(lon_target));
@@ -552,7 +553,7 @@ function getDistance(coordinate) {
       } else {
         alert("directions response "+status);
       }
-    });
+  });
   
 }
 

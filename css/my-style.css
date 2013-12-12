@@ -1,5 +1,15 @@
+body {
+	background-image:url('../img/bg.jpg');
+	background-repeat: no-repeat;
+}
+hr
+{
+    background-color: black;
+    height: 3px;
+}
+
 #container{
-	margin-top: 3%;
+	margin-top:3%;
 }
 
 #home-menu{
@@ -9,6 +19,10 @@
 #title{
 	text-align: center;
 	margin: 2% 0%;
+}
+
+.navbar-inner{
+	background-image: linear-gradient(to bottom,bisque,beige);
 }
 
 .gmnoprint img {
@@ -44,7 +58,9 @@
 	overflow-y: scroll;
 	position: relative;
 	height: 300px;
-	max-height:200px;
+	max-height:200px; 
+	border:1px solid #111111;
+	background-color: beige;
 }
 
 .label.normal {
@@ -56,6 +72,7 @@
 
 #googft-mapCanvas {
 	position: absolute;
+	margin: 0 auto;
 }
 
 .radio-select{
