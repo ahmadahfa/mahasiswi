@@ -1,6 +1,10 @@
+body {
+	background-image:url('../img/bg.jpg');
+	background-repeat: no-repeat;
+}
+
 #container{
 	margin-top:3%;
-	background: url("img/pattern1.jpg");
 }
 
 #home-menu{
@@ -10,6 +14,10 @@
 #title{
 	text-align: center;
 	margin: 2% 0%;
+}
+
+.navbar-inner{
+	background-image: linear-gradient(to bottom,bisque,beige);
 }
 
 .gmnoprint img {
