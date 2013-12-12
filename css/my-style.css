@@ -70,6 +70,14 @@ hr
     background-color: #C891FE;
 }
 
+.label.A {
+    background-color: #04d40e;
+}
+
+.label.B{
+    background-color: #d40404;
+}
+
 #googft-mapCanvas {
 	position: absolute;
 	margin: 0 auto;
@@ -83,3 +91,12 @@ hr
 	margin-right:300px;
 }
 
+#origin {
+	text-decoration: none;
+	color: black;
+}
+
+#destination {
+	text-decoration: none;
+	color: black;
+}
