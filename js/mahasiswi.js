@@ -378,15 +378,15 @@ function list_place(index, kode, place, central) {
       if (parseInt(temp[4]) <= 1000) {
     
           text_seribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
-          text_seribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
+          text_seribu += '<button type="button" class="btn btn-info" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
       else if (parseInt(temp[4]) > 1000 && parseInt(temp[4]) <= 3000) {
           text_tigaribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
-      text_tigaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
+      text_tigaribu += '<button type="button" class="btn btn-info" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
       else if (parseInt(temp[4]) > 3000 && parseInt(temp[4]) <= 5000) {
           text_limaribu += "<li>" + temp[1] + " : " + Math.round(temp[4]) +" meter</br>";
-      text_limaribu += '<button type="button" class="btn btn-success" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
+      text_limaribu += '<button type="button" class="btn btn-info" data-toggle="button" onclick = "getDistance(\'' + coordinate + '\')">Check Route</button><br/></li>';
       }
   }
   /*alert(text_seribu);
