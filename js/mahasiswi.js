@@ -74,7 +74,7 @@ function windowLayer(index, e, infoWindow, map)
   e.infoWindowHtml = "<div class='googft-info-window'>";   
   e.infoWindowHtml += "<b>Tipe: </b><font>" + e.row['Tipe'].value + "</font><br>";
   e.infoWindowHtml += "<b>Nama: </b>" + e.row['Nama'].value + "<br>";
-  e.infoWindowHtml += "<b>Alamat: </b>" + e.row['Alamat'].value + "<br>";
+  e.infoWindowHtml += "<b>Wilayah: </b>" + e.row['Alamat'].value + "<br>";
   e.infoWindowHtml += "<b>Deskripsi: </b>" + e.row['Deskripsi'].value + "<br>";  
   if (index == 0)
     e.infoWindowHtml += "<a href = javascript:passing('" + e.row['Kode'].value + "')>Lihat penjelasan lebih detail</a>";  
@@ -175,7 +175,8 @@ function detail(index, kode, nama, lat, lon)
       clickable: false,
       center: new google.maps.LatLng(lat, lon),
       radius: 1000,    // metres
-      fillColor: '#AA0000'
+      fillColor: '#111111',
+	  strokeWeight:1
     });
 
     //circle.bindTo('center', marker, 'position');
@@ -185,7 +186,8 @@ function detail(index, kode, nama, lat, lon)
       clickable: false,
       center: new google.maps.LatLng(lat, lon),
       radius: 3000,    // metres
-      fillColor: '#FF0000'
+      fillColor: '#333333',
+	  strokeWeight:1
     });
 
 
@@ -196,7 +198,8 @@ function detail(index, kode, nama, lat, lon)
       clickable: false,
       center: new google.maps.LatLng(lat, lon),
       radius: 5000,    // metres
-      fillColor: '#FF00FF'
+      fillColor: '#555555',
+	  strokeWeight:1
     });
 
     var infoWindow = new google.maps.InfoWindow();
@@ -587,7 +590,7 @@ function computeTotalDistance(result,kode,kode2, alamat1, alamat2) {
 	  detik = totalTime % 60;
      //alert(totalDist);
 	 //alert(totalTime);
-	document.getElementById('routeTime').innerHTML = menit + " m "+ detik + " s";
+	document.getElementById('routeTime').innerHTML = menit + " Menit "+ detik + " Detik";
 	document.getElementById('routeDistance').innerHTML = totalDist + " km";
         
   var URLHead1 = "https://www.googleapis.com/fusiontables/v1/query?sql=";

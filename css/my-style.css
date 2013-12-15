@@ -1,6 +1,5 @@
 body {
-	background-image:url('../img/bg.jpg');
-	background-repeat: no-repeat;
+	background-image:url('../img/greyzz.png');
 }
 hr
 {
@@ -16,13 +15,13 @@ hr
 	margin-top: 20%;
 }
 
-#title{
+.title{
 	text-align: center;
 	margin: 2% 0%;
 }
 
 .navbar-inner{
-	background-image: linear-gradient(to bottom,bisque,beige);
+	background-image: linear-gradient(to bottom,#838B8B,beige);
 }
 
 .gmnoprint img {
@@ -51,7 +50,7 @@ hr
 }
 .label.near {
 	margin: 15px 0 15px 0;
-    background-color: #D1487E;
+    background-color: #606063;
 }
 
 .accordion-inner {
@@ -63,10 +62,10 @@ hr
 }
 
 .label.normal {
-    background-color: #E55072;
+    background-color: #7B7C7F;
 }
 .label.far {
-    background-color: #C891FE;
+    background-color: #B9BABF;
 }
 
 .label.A {
@@ -80,10 +79,10 @@ hr
 #googft-mapCanvas {
 	position: absolute;
 	margin: 0 auto;
-	opacity:0.7;
-	border:3px #2ba3ff solid;
+	opacity:0.9;
+	border:2px #dddddd solid;
 	border-radius:5px;
-	filter:alpha(opacity=70);
+	filter:alpha(opacity=90);
 }
 
 #googft-mapCanvas:hover{
@@ -92,10 +91,10 @@ hr
 }
 
 #detail-googft-mapCanvas {
-	opacity:0.7;
-	border:3px #2ba3ff solid;
+	opacity:0.9;
+	border:2px #dddddd solid;
 	border-radius:5px;
-	filter:alpha(opacity=70);	
+	filter:alpha(opacity=90);	
 }
 
 #detail-googft-mapCanvas:hover{
@@ -114,9 +113,19 @@ hr
 #origin {
 	text-decoration: none;
 	color: black;
+	font-weight:bold;
 }
 
 #destination {
 	text-decoration: none;
 	color: black;
+	font-weight:bold;
+}
+
+#routeTime{
+	font-weight:bold;
+}
+
+#routeDistance{
+	font-weight:bold;
 }
